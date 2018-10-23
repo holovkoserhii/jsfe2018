@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>jsfe2018 final project</title>
+</head>
+
+<body>
+    <div class="wrapper-1">
+        <header>
+            <a class="site-logo" href="#">myDreamJob</a>
+            <ul class="main-nav" id="main-nav">
+                <li><a href="#" class="main-nav__item main-nav__item--dropdown">About</a>
+                    <ul class="main-nav__item--sub">
+                        <li><a href="#" class="main-nav__item">What
+                                we do</a></li>
+                        <li><a href="#" class="main-nav__item">Our
+                                team</a></li>
+                    </ul>
+                    <!-- DROPDOWN -->
+                    <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown_hover
+https://codepen.io/holovkoserhii/pen/XENmYP?editors=1100 -->
+                </li>
+                <li><a href="#" class="main-nav__item">Contacts</a></li>
+                <li><a href="#" class="main-nav__item">Log in</a></li>
+                <li><a href="#" class="main-nav__item">Register</a></li>
+            </ul>
+        </header>
+        <h1>Get the best<br>job ever</h1>
+        <p class="descr">And be happy by making your living with your hobby</p>
+        <button class="register">Register</button>
+    </div>
+    <main>
+        <div class="wrapper-2">
+            <section class="logged-in">
+                <form action="">
+                    logged in admin
+                </form>
+                <!-- Авторизація -->
+                <!-- https://habr.com/post/145970/ -->
+                <!-- http://www.cyberforum.ru/javascript/thread712609.html -->
+                <!-- https://www.codementor.io/mayowa.a/how-to-build-a-simple-session-based-authentication-system-with-nodejs-from-scratch-6vn67mcy3 -->
+                <!-- https://ru.stackoverflow.com/questions/291664/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E-%D0%BD%D0%B0-javascript -->
+
+            </section>
+            <section class="services-story">
+                <h2>What can we do for you?</h2>
+                <input type="radio" name="show-story" id="story-1" checked>
+                <input type="radio" name="show-story" id="story-2">
+                <input type="radio" name="show-story" id="story-3">
+                <input type="radio" name="show-story" id="story-4">
+                <input type="radio" name="show-story" id="story-5">
+                <div class="stories-container">
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-1" id="large-1-turnon">
+                        <label class="transparent-label" for="large-1-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/ebG8vq/1-team-small.jpg"
+                            alt="story1" width="300" height="300">
+                        <div class="stories-container__item-descr">We are the united team of world
+                            class professionals</div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/jXziTA/1-team-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-1" id="large-1-turnoff">
+                            <label class="stories-container__close-modal" for="large-1-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-2" id="large-2-turnon">
+                        <label class="transparent-label" for="large-2-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/jeWaaq/2-masterpiece-small.jpg"
+                            alt="story2" width="300" height="300">
+                        <div class="stories-container__item-descr">
+                            Who create the masterpiece in IT headhunting art
+                        </div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/hEsgFq/2-masterpiece-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-2" id="large-2-turnoff">
+                            <label class="stories-container__close-modal" for="large-2-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-3" id="large-3-turnon">
+                        <label class="transparent-label" for="large-3-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/b0icoA/3-create-future-small.jpg"
+                            alt="story3" width="300" height="300">
+                        <div class="stories-container__item-descr">Creating the future. Your
+                            future. Every day.
+                        </div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/c0p6gV/3-create-future-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-3" id="large-3-turnoff">
+                            <label class="stories-container__close-modal" for="large-3-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-4" id="large-4-turnon">
+                        <label class="transparent-label" for="large-4-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/cQMV8A/4-idea-small.jpg"
+                            alt="story4" width="300" height="300">
+                        <div class="stories-container__item-descr">We provide the best ideas of
+                            getting you hired by the world's top employers
+                        </div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/h4uTvq/4-idea-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-4" id="large-4-turnoff">
+                            <label class="stories-container__close-modal" for="large-4-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-5" id="large-5-turnon">
+                        <label class="transparent-label" for="large-5-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/jmmaaq/5-startup-small.jpg"
+                            alt="story5" width="300" height="300">
+                        <div class="stories-container__item-descr">Developing your own startup
+                        </div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/hTqe1V/5-startup-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-5" id="large-5-turnoff">
+                            <label class="stories-container__close-modal" for="large-5-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-6" id="large-6-turnon">
+                        <label class="transparent-label" for="large-6-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/c5Jovq/6-create-offer-small.jpg"
+                            alt="story6" width="300" height="300">
+                        <div class="stories-container__item-descr">Therefore creating the best
+                            possible offer, right for you.</div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/hrZiTA/6-create-offer-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-6" id="large-6-turnoff">
+                            <label class="stories-container__close-modal" for="large-6-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-7" id="large-7-turnon">
+                        <label class="transparent-label" for="large-7-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/dQmK1V/7-work-life-small.jpg"
+                            alt="story7" width="300" height="300">
+                        <div class="stories-container__item-descr">So you can enjoy your dream</div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/kEVe1V/7-work-life-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-7" id="large-7-turnoff">
+                            <label class="stories-container__close-modal" for="large-7-turnoff">⤬</label>
+                        </div>
+                    </div>
+                    <div class="stories-container__item">
+                        <input type="radio" name="show-large-8" id="large-8-turnon">
+                        <label class="transparent-label" for="large-8-turnon"></label>
+                        <img class="stories__small" src="https://image.ibb.co/mA8coA/8-grow-small.jpg"
+                            alt="story8" width="300" height="300">
+                        <div class="stories-container__item-descr">And grow as a professional</div>
+                        <div class="stories-container__modal-backdrop">
+                            <img src="https://preview.ibb.co/eT7Faq/8-grow-large.jpg" alt="story"
+                                width="640" height="426">
+                            <input type="radio" name="show-large-8" id="large-8-turnoff">
+                            <label class="stories-container__close-modal" for="large-8-turnoff">⤬</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="our-team">
+                <h2>Meet our team</h2>
+                <ul class="team-list">
+                    <li class="team-list__item">
+                        <div class="img-holder">
+                            <img src="https://image.ibb.co/cLYCMV/team-zuckerberg.jpg" alt="team-zuckerberg"
+                                width="120" height="120">
+                        </div>
+                        <h4 class="team-list__title">Mark:<br>IT & Social media director</h4>
+                        <p class="team-list__desc">A big fan of social networks and React JS
+                            framework. As a philanthropist, I devote time to charity.</p>
+                    </li>
+                    <li class="team-list__item">
+                        <div class="img-holder">
+                            <img src="https://image.ibb.co/e4cjkq/team-hetfield.jpg" alt="team-hetfield"
+                                width="120" height="120">
+                        </div>
+                        <h4 class="team-list__title">James:<br>Corporate culture director</h4>
+                        <p class="team-list__desc">I get my inspiration from astronomy and a
+                            heavy metal music. I'd rather regret doing something than not doing
+                            something.</p>
+                    </li>
+                    <li class="team-list__item">
+                        <div class="img-holder">
+                            <img src="https://image.ibb.co/c0iCMV/team-musk.jpg" alt="team-musk"
+                                width="120" height="120">
+                        </div>
+                        <h4 class="team-list__title">Elon:<br>Innovations director</h4>
+                        <p class="team-list__desc">I'm a happy person that creates future: new
+                            ways of headhunting, transport and even space exploration.</p>
+                    </li>
+                    <li class="team-list__item">
+                        <div class="img-holder">
+                            <img src="https://image.ibb.co/gsyOTA/team-obama.jpg" alt="team-obama"
+                                width="120" height="120">
+                        </div>
+                        <h4 class="team-list__title">Barack:<br>CEO</h4>
+                        <p class="team-list__desc">I am fond of general management, polytics.
+                            My favorite country is the US.</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="contacts-section">
+                <h2>Get in touch with us</h2>
+                <div class="contacts-main">
+                    <div class="contacts-section__feedback">
+                        <p class="contacts__hint">Write us a message ...</p>
+                        <form id="feedback">
+                            <input id="feedback__name" class="feedback__input" type="text"
+                                placeholder="NAME">
+                            <input id="feedback__email" class="feedback__input" type="text"
+                                placeholder="E-MAIL">
+                            <textarea id="feedback__message" type="text" placeholder="MESSAGE"></textarea>
+                            <input id="feedback__submit" class="feedback__input" type="submit"
+                                value="Send message">
+                        </form>
+                    </div>
+                    <div class="contacts-section__details">
+                        <p class="contacts__hint">... or contact us directly</p>
+                        <a href="skype:holovko.s?call" class="contacts__elem contacts__elem--skype">holovko.s</a>
+                        <a href="mailto:holovko.s@gmail.com" class="contacts__elem contacts__elem--email">holovko.s@gmail.com</a>
+                        <a href="tel:+380931196677" class="contacts__elem contacts__elem--tel">+380931196677</a>
+                        <address class="contacts__elem contacts__elem--address">
+                            10, Prorizna Str., Kyiv, Ukraine</address>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5081.201360400589!2d30.514668505507018!3d50.448538202910115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce574899e9ed%3A0x9a10cc9e6d8c79ef!2z0LLRg9C70LjRhtGPINCf0YDQvtGA0ZbQt9C90LAsIDEwLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1540125933402"
+                            width="400" height="300" frameborder="0" style="border:0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="footer__disclaimer">All characters appearing in this work are
+                    fictitious. Any resemblance to real persons, living or dead, is purely
+                    coincidental.</div>
+                <div class="footer__copyright">Serhii Holovko<br>All rights reserved © 2018</div>
+            </footer>
+        </div>
+        <section class="page-modal">
+            <!-- https://codepen.io/ehermanson/pen/KwKWEv -->
+            <div class="form">
+
+                <ul class="tab-group">
+                    <li class="tab active"><a href="#signup">Sign Up</a></li>
+                    <li class="tab"><a href="#login">Log In</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="signup">
+                        <h1>Sign Up for Free</h1>
+
+                        <form action="/" method="post">
+
+                            <div class="top-row">
+                                <div class="field-wrap">
+                                </div>
+
+                                <div class="field-wrap">
+                                </div>
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>
+                                    Email Address<span class="req">*</span>
+                                </label>
+                                <input type="email" required autocomplete="off" />
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>
+                                    Create a password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" />
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>
+                                    Repeat the password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" />
+                            </div>
+
+                            <button type="submit" class="button button-block" />Get Started</button>
+
+                        </form>
+
+                    </div>
+
+                    <div id="login">
+                        <h1>Welcome Back!</h1>
+
+                        <form action="/" method="post">
+
+                            <div class="field-wrap">
+                                <label>
+                                    Email Address<span class="req">*</span>
+                                </label>
+                                <input type="email" required autocomplete="off" />
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>
+                                    Password<span class="req">*</span>
+                                </label>
+                                <input type="password" required autocomplete="off" />
+                            </div>
+
+                            <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+                            <button class="button button-block" />Log In</button>
+
+                        </form>
+
+                    </div>
+
+                </div><!-- tab-content -->
+
+            </div>
+        </section>
+    </main>
+
+    <a href="#main-nav" class="to-main-nav"></a>
+</body>
+
+</html>
