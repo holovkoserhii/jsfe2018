@@ -2,7 +2,7 @@
 
 myDREAMjob
 
-For correct testing needed to setup locally and start the JSON server - "light backend" (npm run server). Afterwards db.json file plays the role of a backend database.
+For correct usage needed to setup locally and start the JSON server - "light backend" (npm run server). Afterwards db.json file plays the role of a backend database.
 
 General features:
 - The headhunting site based on a semantic markup the with ability to view info (incl. map, contacts, team, gallery with css-sliders), registeration, login and different rights based on the client type (user / administrator).
