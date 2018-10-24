@@ -2,10 +2,12 @@
 
 myDREAMjob
 
-For correct testing needed to setup locally and start the JSON server ("light backend"). Afterwards db.json file plays the role of a backend database.
+For correct testing needed to setup locally and start the JSON server - "light backend" (npm run server). Afterwards db.json file plays the role of a backend database.
 
 General features:
-- The headhunting site based on a semantic markup the with ability to view info (incl. map, contacts, team, gallery with css-sliders), registeration, login and different rights based on the client type (user / administrator). For user - ability to create a set of skills with a fluency levels and create the appropriate record in the "database" (db.json file). For administrator - ability to view statistics  of registered user, including filtering, sorting, pagination and downloading the query result into csv file.
+- The headhunting site based on a semantic markup the with ability to view info (incl. map, contacts, team, gallery with css-sliders), registeration, login and different rights based on the client type (user / administrator).
+    - For user - ability to create a set of skills with a fluency levels and create the appropriate record in the "database" (db.json file).
+    - For administrator - ability to view statistics  of registered user, including filtering, sorting, pagination and downloading the query result into csv file.
 - Primitive backend with a database and authentication (passing not encoded data, storing it open etc).
 - Primitive unit testing (Jest) and e2e testing (Selenium).
 
