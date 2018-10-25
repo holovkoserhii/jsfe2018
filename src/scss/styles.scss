@@ -52,9 +52,13 @@ section {
 
 .wrapper-1 {
   text-align: center;
-  background-color: #000000;
-  background-image: url("../img/code-coding-computer-574077.jpg");
-  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  // background-image: url("../img/code-coding-computer-574077.jpg");
+  // background-blend-mode: darken;
+  // background-repeat: no-repeat;
+  background-image: linear-gradient(black, black),
+    url("../img/code-coding-computer-574077.jpg");
+  background-blend-mode: saturation;
   background-size: cover;
   background-position: center;
   min-height: 540px;
@@ -117,12 +121,8 @@ header {
     &--sub {
       display: none;
       position: absolute;
-      left: 0px;
-      bottom: -100px;
-    }
-
-    &--dropdown:hover ~ .main-nav__item--sub {
-      display: block;
+      left: 30px;
+      bottom: -80px;
     }
 
     &:hover,
@@ -132,10 +132,30 @@ header {
   }
 
   &__subitem {
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+    width: 100px;
+    height: 40px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
-  & li:not(:last-child) {
-    border-right: 3px solid $white;
-  }
+
+  // & > li:not(:last-child) {
+  //   border-right: 3px solid $white;
+  // }
+}
+
+.main-nav__subitem:hover,
+.main-nav__subitem:focus {
+  color: $text-active;
+}
+
+#menu-sub-onhover:hover .main-nav__item--sub {
+  display: block;
 }
 
 .wrapper-1 p {
@@ -175,40 +195,12 @@ header {
   height: 800px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // SERVICES-STORY
 
 .services-story {
   position: relative;
   display: inline-block;
-  background: rgb(0, 200, 255);
+  background: radial-gradient(#ffffff, rgb(0, 200, 255));
   width: 100%;
 }
 
@@ -251,7 +243,9 @@ header {
   // filter: blur(5px);
 }
 
-.stories-container__item .transparent-label:hover ~ .stories-container__item-descr {
+.stories-container__item
+  .transparent-label:hover
+  ~ .stories-container__item-descr {
   display: block;
 }
 
@@ -312,7 +306,9 @@ input:checked ~ .stories-container__item {
   display: inline-block;
 }
 
-#story-1:checked ~ .stories-container .stories-container__item:nth-of-type(n + 5) {
+#story-1:checked
+  ~ .stories-container
+  .stories-container__item:nth-of-type(n + 5) {
   display: none;
 }
 
@@ -320,31 +316,44 @@ input:checked ~ .stories-container__item {
   display: none;
 }
 
-#story-2:checked ~ .stories-container .stories-container__item:nth-child(n + 6) {
+#story-2:checked
+  ~ .stories-container
+  .stories-container__item:nth-child(n + 6) {
   display: none;
 }
 
-#story-3:checked ~ .stories-container .stories-container__item:nth-child(-n + 2) {
+#story-3:checked
+  ~ .stories-container
+  .stories-container__item:nth-child(-n + 2) {
   display: none;
 }
 
-#story-3:checked ~ .stories-container .stories-container__item:nth-child(n + 7) {
+#story-3:checked
+  ~ .stories-container
+  .stories-container__item:nth-child(n + 7) {
   display: none;
 }
 
-#story-4:checked ~ .stories-container .stories-container__item:nth-child(-n + 3) {
+#story-4:checked
+  ~ .stories-container
+  .stories-container__item:nth-child(-n + 3) {
   display: none;
 }
 
-#story-4:checked ~ .stories-container .stories-container__item:nth-child(n + 8) {
+#story-4:checked
+  ~ .stories-container
+  .stories-container__item:nth-child(n + 8) {
   display: none;
 }
 
-#story-5:checked ~ .stories-container .stories-container__item:nth-child(-n + 4) {
+#story-5:checked
+  ~ .stories-container
+  .stories-container__item:nth-child(-n + 4) {
   display: none;
 }
 
-input[name^="show-large"][id$="turnon"]:checked ~ .stories-container__modal-backdrop {
+input[name^="show-large"][id$="turnon"]:checked
+  ~ .stories-container__modal-backdrop {
   display: block;
   position: fixed;
   top: 0;
@@ -395,17 +404,6 @@ input[name="show-large"] {
 input[name^="show-large"] {
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // TEAM LIST
 
@@ -521,8 +519,6 @@ input[name^="show-large"] {
 //   background-position: center;
 // }
 
-
-
 // CONTACTS
 
 .contacts-section {
@@ -588,7 +584,7 @@ input[name^="show-large"] {
   margin: -5px 0px 0px 0px;
   font-size: 0.875em;
   color: #b3aca7;
-  outline:none;
+  outline: none;
   cursor: pointer;
   border: solid 1px #b3aca7;
   border-top: none;
@@ -598,26 +594,26 @@ input[name^="show-large"] {
   }
 }
 
-.feedback__input::placeholder, #feedback__message::placeholder {
+.feedback__input::placeholder,
+#feedback__message::placeholder {
   color: #aca49c;
   font-size: 14px;
 }
 
-.feedback__input:focus::placeholder, #feedback__message:focus::placeholder {
+.feedback__input:focus::placeholder,
+#feedback__message:focus::placeholder {
   color: #bbb5af;
 }
 
-.feedback__input:hover::placeholder, #feedback__message:hover::placeholder {
+.feedback__input:hover::placeholder,
+#feedback__message:hover::placeholder {
   color: #e2dedb;
 }
 
-.feedback__input:hover:focus::placeholder, #feedback__message:hover:focus::placeholder {
+.feedback__input:hover:focus::placeholder,
+#feedback__message:hover:focus::placeholder {
   color: #cbc6c1;
 }
-
-
-
-
 
 .contacts__elem {
   display: block;
@@ -653,16 +649,6 @@ input[name^="show-large"] {
   background-image: url(../img/telephone-icon.png);
 }
 
-
-
-
-
-
-
-
-
-
-
 // FOOTER
 footer {
   background: $main-theme;
@@ -677,8 +663,6 @@ footer {
     padding: 20px;
   }
 }
-
-
 
 // FIXED BUTTON
 .to-main-nav {
@@ -716,18 +700,6 @@ footer {
     background-position: 50%;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // PAGE-MODAL
 

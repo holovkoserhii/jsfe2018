@@ -1,14 +1,21 @@
-﻿@media (max-width: 747px) {
+﻿@import "colors";
+
+@media (max-width: 747px) {
   /* Лише для моб */
 
+  .site-logo {
+    margin-bottom: 30px;
+  }
+
   .wrapper-1 h1 {
+    margin-top: 10px;
     font-size: 30px;
   }
 
   header {
     flex-direction: column;
     height: auto;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .main-nav {
@@ -17,9 +24,23 @@
     border-radius: unset;
   }
 
+  .main-nav__item {
+    justify-content: flex-start;
+  }
+
+  .main-nav__item--sub {
+    display: block;
+    position: static;
+    margin-left: 50px;
+  }
+
+  // .main-nav li {
+  //   border: unset;
+  // }
+
   .to-main-nav {
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
   }
 
   //TEAM LIST
@@ -29,7 +50,6 @@
   }
 
   // CONTACTS
-  
 
   // FOOTER
   footer {
@@ -74,6 +94,10 @@
     padding: 44px;
   }
 
+  .main-nav > li:not(:last-child) {
+    border-right: 3px solid $white;
+  }
+
   .team-list {
     display: flex;
     flex-wrap: wrap;
@@ -108,7 +132,9 @@
     display: none;
   }
 
-  #story-1:checked ~ .stories-container .stories-container__item:nth-of-type(n + 5) {
+  #story-1:checked
+    ~ .stories-container
+    .stories-container__item:nth-of-type(n + 5) {
     display: inline-block;
   }
 }
