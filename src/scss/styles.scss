@@ -793,21 +793,24 @@ footer {
 }
 
 label.active {
-  transform: translateY(50px);
+  transform: translateY(25px);
   left: 2px;
-  font-size: 14px;
+  font-size: 12px;
 
   .page-modal__req {
     opacity: 0;
   }
 }
 
-.page-modal label.highlight {
-  color: $white;
+.page-modal label.valid {
+  color: #249c24;
 }
 
-.page-modal input,
-.page-modal textarea {
+.page-modal label.invalid {
+  color: #c42f2f;
+}
+
+.page-modal input {
   font-size: 22px;
   display: block;
   width: 100%;
@@ -877,9 +880,23 @@ label.active {
   width: 100%;
 }
 
-.page-modal__forgot {
-  margin-top: -20px;
-  text-align: right;
+.page-modal__remember {
+  position: relative;
+  display: inline;
+  margin-top: -30px;
+  // text-align: right;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgba($white, 0.5);
+  height: 40px;
+  width: 40px;
+  background: red;
+  z-index: 10;
+}
+
+.page-modal__remember input {
+  width: 15px;
+  height: 15px;
 }
 
 .page-modal__close-modal {
