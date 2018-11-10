@@ -41,15 +41,41 @@
     </div>
     <main>
         <div class="wrapper-2">
-            <section class="logged-in">
-                <form action="">
-                    logged in admin
-                </form>
-                <!-- Авторизація -->
-                <!-- https://habr.com/post/145970/ -->
-                <!-- http://www.cyberforum.ru/javascript/thread712609.html -->
-                <!-- https://www.codementor.io/mayowa.a/how-to-build-a-simple-session-based-authentication-system-with-nodejs-from-scratch-6vn67mcy3 -->
-                <!-- https://ru.stackoverflow.com/questions/291664/%D0%9A%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8E-%D0%BD%D0%B0-javascript -->
+            <section class="logged-in visually-hidden" id="logged-in">
+                <div class="logged-in__inner-nav">
+                    <div class="logged-in__greeting">Доброго вечора,
+                        oleksandr.zadorozhnyi@googlemail.com</div>
+                    <select name="logged-in__language" id="logged-in__language"></select>
+                </div>
+                <div class="logged-in__name">
+                    <input type="text" name="logged-in__name" id="logged-in__name"> Ваше ім'я
+                </div>
+                <!-- <div class="logged-in__update_pass">
+                    взяти логіку з модального вікна
+                    <input type="text" name="111" id="222"> пароль
+                    <input type="text" name="333" id="444"> пароль ще раз
+                </div> -->
+                <div class="logged-in__user"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Strength</th>
+                            <th>Controls</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Typescript</td>
+                            <td>7/10</td>
+                            <!-- https://codepen.io/facundocorradini/pen/WgzwXj?editors=1100 -->
+                            <!-- https://codepen.io/facundocorradini/pen/Ooxorm?page=1& -->
+                            <!-- range -->
+                            <!-- meter -->
+                            <td><button>Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </section>
             <section id="services" class="services-story">
@@ -63,15 +89,14 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-1" id="large-1-turnon">
                         <label class="transparent-label" for="large-1-turnon"></label>
-                        <img class="stories__small" src="./img/1-team-small.jpeg"
-                            alt="story1" width="300" height="300">
-                            <!-- <img class="stories__small" src="https://image.ibb.co/ebG8vq/1-team-small.jpg"
+                        <img class="stories__small" src="./img/1-team-small.jpeg" alt="story1"
+                            width="300" height="300">
+                        <!-- <img class="stories__small" src="https://image.ibb.co/ebG8vq/1-team-small.jpg"
                             alt="story1" width="300" height="300"> -->
                         <div class="stories-container__item-descr">We are the united team of world
                             class professionals</div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/1-team-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/1-team-large.jpeg" alt="story" width="640" height="426">
                             <input type="radio" name="show-large-1" id="large-1-turnoff">
                             <label class="stories-container__close-modal" for="large-1-turnoff">⤬</label>
                         </div>
@@ -79,14 +104,14 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-2" id="large-2-turnon">
                         <label class="transparent-label" for="large-2-turnon"></label>
-                        <img class="stories__small" src="./img/2-masterpiece-small.jpeg"
-                            alt="story2" width="300" height="300">
+                        <img class="stories__small" src="./img/2-masterpiece-small.jpeg" alt="story2"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">
                             Who create the masterpiece in IT headhunting art
                         </div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/2-masterpiece-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/2-masterpiece-large.jpeg" alt="story" width="640"
+                                height="426">
                             <input type="radio" name="show-large-2" id="large-2-turnoff">
                             <label class="stories-container__close-modal" for="large-2-turnoff">⤬</label>
                         </div>
@@ -94,14 +119,14 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-3" id="large-3-turnon">
                         <label class="transparent-label" for="large-3-turnon"></label>
-                        <img class="stories__small" src="./img/3-create-future-small.jpeg"
-                            alt="story3" width="300" height="300">
+                        <img class="stories__small" src="./img/3-create-future-small.jpeg" alt="story3"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">Creating the future. Your
                             future. Every day.
                         </div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/3-create-future-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/3-create-future-large.jpeg" alt="story" width="640"
+                                height="426">
                             <input type="radio" name="show-large-3" id="large-3-turnoff">
                             <label class="stories-container__close-modal" for="large-3-turnoff">⤬</label>
                         </div>
@@ -109,14 +134,13 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-4" id="large-4-turnon">
                         <label class="transparent-label" for="large-4-turnon"></label>
-                        <img class="stories__small" src="./img/4-idea-small.jpeg"
-                            alt="story4" width="300" height="300">
+                        <img class="stories__small" src="./img/4-idea-small.jpeg" alt="story4"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">We provide the best ideas of
                             getting you hired by the world's top employers
                         </div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/4-idea-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/4-idea-large.jpeg" alt="story" width="640" height="426">
                             <input type="radio" name="show-large-4" id="large-4-turnoff">
                             <label class="stories-container__close-modal" for="large-4-turnoff">⤬</label>
                         </div>
@@ -124,13 +148,12 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-5" id="large-5-turnon">
                         <label class="transparent-label" for="large-5-turnon"></label>
-                        <img class="stories__small" src="./img/5-startup-small.jpeg"
-                            alt="story5" width="300" height="300">
+                        <img class="stories__small" src="./img/5-startup-small.jpeg" alt="story5"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">Developing your own startup
                         </div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/5-startup-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/5-startup-large.jpeg" alt="story" width="640" height="426">
                             <input type="radio" name="show-large-5" id="large-5-turnoff">
                             <label class="stories-container__close-modal" for="large-5-turnoff">⤬</label>
                         </div>
@@ -138,13 +161,13 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-6" id="large-6-turnon">
                         <label class="transparent-label" for="large-6-turnon"></label>
-                        <img class="stories__small" src="./img/6-create-offer-small.jpeg"
-                            alt="story6" width="300" height="300">
+                        <img class="stories__small" src="./img/6-create-offer-small.jpeg" alt="story6"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">Therefore creating the best
                             possible offer, right for you.</div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/6-create-offer-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/6-create-offer-large.jpeg" alt="story" width="640"
+                                height="426">
                             <input type="radio" name="show-large-6" id="large-6-turnoff">
                             <label class="stories-container__close-modal" for="large-6-turnoff">⤬</label>
                         </div>
@@ -152,12 +175,11 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-7" id="large-7-turnon">
                         <label class="transparent-label" for="large-7-turnon"></label>
-                        <img class="stories__small" src="./img/7-work-life-small.jpeg"
-                            alt="story7" width="300" height="300">
+                        <img class="stories__small" src="./img/7-work-life-small.jpeg" alt="story7"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">So you can enjoy your dream</div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/7-work-life-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/7-work-life-large.jpeg" alt="story" width="640" height="426">
                             <input type="radio" name="show-large-7" id="large-7-turnoff">
                             <label class="stories-container__close-modal" for="large-7-turnoff">⤬</label>
                         </div>
@@ -165,12 +187,11 @@
                     <div class="stories-container__item">
                         <input type="radio" name="show-large-8" id="large-8-turnon">
                         <label class="transparent-label" for="large-8-turnon"></label>
-                        <img class="stories__small" src="./img/8-grow-small.jpeg"
-                            alt="story8" width="300" height="300">
+                        <img class="stories__small" src="./img/8-grow-small.jpeg" alt="story8"
+                            width="300" height="300">
                         <div class="stories-container__item-descr">And grow as a professional</div>
                         <div class="stories-container__modal-backdrop">
-                            <img src="./img/8-grow-large.jpeg" alt="story"
-                                width="640" height="426">
+                            <img src="./img/8-grow-large.jpeg" alt="story" width="640" height="426">
                             <input type="radio" name="show-large-8" id="large-8-turnoff">
                             <label class="stories-container__close-modal" for="large-8-turnoff">⤬</label>
                         </div>
@@ -182,8 +203,8 @@
                 <ul class="team-list">
                     <li class="team-list__item">
                         <div class="img-holder">
-                            <img src="./img/team-zuckerberg.jpg" alt="team-zuckerberg"
-                                width="120" height="120">
+                            <img src="./img/team-zuckerberg.jpg" alt="team-zuckerberg" width="120"
+                                height="120">
                         </div>
                         <h4 class="team-list__title">Mark:<br>IT & Social media director</h4>
                         <p class="team-list__desc">A big fan of social networks and React JS
@@ -191,8 +212,8 @@
                     </li>
                     <li class="team-list__item">
                         <div class="img-holder">
-                            <img src="./img/team-hetfield.jpg" alt="team-hetfield"
-                                width="120" height="120">
+                            <img src="./img/team-hetfield.jpg" alt="team-hetfield" width="120"
+                                height="120">
                         </div>
                         <h4 class="team-list__title">James:<br>Corporate culture director</h4>
                         <p class="team-list__desc">I get my inspiration from astronomy and a
@@ -201,8 +222,7 @@
                     </li>
                     <li class="team-list__item">
                         <div class="img-holder">
-                            <img src="./img/team-musk.jpg" alt="team-musk"
-                                width="120" height="120">
+                            <img src="./img/team-musk.jpg" alt="team-musk" width="120" height="120">
                         </div>
                         <h4 class="team-list__title">Elon:<br>Innovations director</h4>
                         <p class="team-list__desc">I'm a happy person that creates future: new
@@ -210,8 +230,7 @@
                     </li>
                     <li class="team-list__item">
                         <div class="img-holder">
-                            <img src="./img/team-obama.jpg" alt="team-obama"
-                                width="120" height="120">
+                            <img src="./img/team-obama.jpg" alt="team-obama" width="120" height="120">
                         </div>
                         <h4 class="team-list__title">Barack:<br>CEO</h4>
                         <p class="team-list__desc">I am fond of general management, polytics.
@@ -248,6 +267,70 @@
                 </div>
                 <button class="register">Register</button>
             </section>
+            <!-- <section class="page-modal visually-hidden"> -->
+                <!-- https://codepen.io/ehermanson/pen/KwKWEv -->
+                <!-- <div class="page-modal__wrapper">
+                    <ul class="page-modal__tab-group">
+                        <li class="page-modal__tab page-modal__tab--login page-modal__tab--modal-tab-active"><a
+                                href="#">Log In</a></li>
+                        <li class="page-modal__tab page-modal__tab--register"><a href="#">Register</a></li>
+                    </ul>
+                    <div class="page-modal__tab-content">
+                        <div id="page-modal__login">
+                            <form action="/" method="post" class="page-modal__form-login">
+                                <div class="page-modal__field-wrap">
+                                    <label for="email-login">
+                                        Email Address<span class="page-modal__req">*</span>
+                                    </label>
+                                    <input class="page-modal__user-text-input" id="email-login" type="email"
+                                        required autocomplete="off" autofocus />
+                                </div>
+                                <div class="page-modal__field-wrap">
+                                    <label for="pass-login">
+                                        Password<span class="page-modal__req">*</span>
+                                    </label>
+                                    <input class="page-modal__user-text-input" id="pass-login" type="password"
+                                        required autocomplete="off" />
+                                </div>
+                                <p class="page-modal__remember">
+                                    <input type="checkbox" id="remember-me" />
+                                    <label for="remember-me">Keep me logged in</label>
+                                </p>
+                                <button type="submit" class="page-modal__button page-modal__button--log-in page-modal__button--button-block">Log
+                                    In</button>
+                            </form>
+                        </div>
+                        <div class="visually-hidden" id="page-modal__register">
+                            <form action="/" method="post" class="page-modal__form-register">
+                                <div class="page-modal__field-wrap">
+                                    <label for="email-register">
+                                        Email Address<span class="page-modal__req">*</span>
+                                    </label>
+                                    <input class="page-modal__user-text-input" id="email-register" type="email"
+                                        required autocomplete="off" autofocus />
+                                </div>
+                                <div class="page-modal__field-wrap">
+                                    <label for="pass1-register">
+                                        Create a password 8 symbols long<span class="page-modal__req">*</span>
+                                    </label>
+                                    <input class="page-modal__user-text-input" id="pass1-register" type="password"
+                                        required autocomplete="off" />
+                                </div>
+                                <div class="page-modal__field-wrap">
+                                    <label for="pass2-register">
+                                        Repeat the password<span class="page-modal__req">*</span>
+                                    </label>
+                                    <input class="page-modal__user-text-input" id="pass2-register" type="password"
+                                        required autocomplete="off" />
+                                </div>
+                                <button type="submit" class="page-modal__button page-modal__button--register-new page-modal__button--button-block">Go!</button>
+                            </form>
+                        </div> -->
+                    <!-- </div>tab-content -->
+                    <!-- <span class="page-modal__close-modal">⤬</span>
+                </div>
+            </section> -->
+            <!-- <a href="#main-nav" class="to-main-nav"></a> -->
             <footer>
                 <div class="footer__disclaimer">All characters appearing in this work are
                     fictitious. Any resemblance to real persons, living or dead, is purely
@@ -267,7 +350,7 @@
 
 
 
-        <section class="page-modal">
+        <section class="page-modal visually-hidden">
             <!-- https://codepen.io/ehermanson/pen/KwKWEv -->
             <div class="page-modal__wrapper">
                 <ul class="page-modal__tab-group">
@@ -277,13 +360,13 @@
                 </ul>
                 <div class="page-modal__tab-content">
                     <div id="page-modal__login">
-                        <form action="/" method="post">
+                        <form action="/" method="post" class="page-modal__form-login">
                             <div class="page-modal__field-wrap">
                                 <label for="email-login">
                                     Email Address<span class="page-modal__req">*</span>
                                 </label>
                                 <input class="page-modal__user-text-input" id="email-login" type="email"
-                                    required autocomplete="off" />
+                                    required autocomplete="off" autofocus />
                             </div>
                             <div class="page-modal__field-wrap">
                                 <label for="pass-login">
@@ -292,25 +375,26 @@
                                 <input class="page-modal__user-text-input" id="pass-login" type="password"
                                     required autocomplete="off" />
                             </div>
-                            <span class="page-modal__remember">
-                                <label><input type="checkbox" />Option 1</label>
-                            </span>
-                            <button class="page-modal__button page-modal__button--button-block">Log
+                            <p class="page-modal__remember">
+                                <input type="checkbox" id="remember-me" />
+                                <label for="remember-me">Keep me logged in</label>
+                            </p>
+                            <button type="submit" class="page-modal__button page-modal__button--log-in page-modal__button--button-block">Log
                                 In</button>
                         </form>
                     </div>
                     <div class="visually-hidden" id="page-modal__register">
-                        <form action="/" method="post">
+                        <form action="/" method="post" class="page-modal__form-register">
                             <div class="page-modal__field-wrap">
                                 <label for="email-register">
                                     Email Address<span class="page-modal__req">*</span>
                                 </label>
                                 <input class="page-modal__user-text-input" id="email-register" type="email"
-                                    required autocomplete="off" />
+                                    required autocomplete="off" autofocus />
                             </div>
                             <div class="page-modal__field-wrap">
                                 <label for="pass1-register">
-                                    Create a password<span class="page-modal__req">*</span>
+                                    Create a password 8 symbols long<span class="page-modal__req">*</span>
                                 </label>
                                 <input class="page-modal__user-text-input" id="pass1-register" type="password"
                                     required autocomplete="off" />
@@ -322,10 +406,10 @@
                                 <input class="page-modal__user-text-input" id="pass2-register" type="password"
                                     required autocomplete="off" />
                             </div>
-                            <button type="submit" class="page-modal__button page-modal__button--button-block">Go!</button>
+                            <button type="submit" class="page-modal__button page-modal__button--register-new page-modal__button--button-block">Go!</button>
                         </form>
                     </div>
-                </div><!-- tab-content -->
+                </div>
                 <span class="page-modal__close-modal">⤬</span>
             </div>
         </section>

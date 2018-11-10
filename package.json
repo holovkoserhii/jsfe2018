@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "server": "node server.js"
+    "server": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",

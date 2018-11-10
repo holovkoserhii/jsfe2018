@@ -92,7 +92,7 @@ header {
 
 .main-nav {
   margin: 0px;
-  width: 440px;
+  // width: 440px;
   padding: 0px 20px;
   min-height: 30px;
   background: $main-theme;
@@ -107,8 +107,9 @@ header {
     font-weight: 700;
     border: none;
     background: transparent;
-    width: 100px;
+    min-width: 100px;
     height: 40px;
+    padding: 0px 10px;
     margin: 0px;
     display: flex;
     align-items: center;
@@ -193,8 +194,9 @@ header {
 // LOGGED IN
 
 .logged-in {
-  background: $black;
+  background: rgba($black, 0.9);
   height: 800px;
+  color: rgba($white, 0.7);
 }
 
 // SERVICES-STORY
@@ -363,7 +365,7 @@ input[name^="show-large"][id$="turnon"]:checked
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 5;
+  z-index: 9;
 }
 
 .stories-container__modal-backdrop img {
@@ -669,6 +671,7 @@ footer {
 
 // FIXED BUTTON
 .to-main-nav {
+  z-index: 8;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -714,7 +717,7 @@ footer {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.95);
-  z-index: 6;
+  z-index: 9;
 }
 
 .page-modal a {
@@ -771,11 +774,14 @@ footer {
   }
 }
 
-// .page-modal__tab-content > div {
-//   display: none;
-// }
+.page-modal__tab-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-.page-modal label {
+// .page-modal label {
+  .page-modal__field-wrap label {
   position: absolute;
   transform: translateY(6px);
   left: 13px;
@@ -792,7 +798,7 @@ footer {
   }
 }
 
-label.active {
+label:not([for="remember-me"]).active {
   transform: translateY(25px);
   left: 2px;
   font-size: 12px;
@@ -810,11 +816,10 @@ label.active {
   color: #c42f2f;
 }
 
-.page-modal input {
+.page-modal input[type="email"],
+.page-modal input[type="password"] {
   font-size: 22px;
-  display: block;
   width: 100%;
-  height: 100%;
   padding: 5px 10px;
   background: none;
   background-image: none;
@@ -823,10 +828,45 @@ label.active {
   border-radius: 0;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 
+  &[type="checkbox"] {
+    display: inline;
+    min-height: 20px;
+    min-width: 20px;
+    font-size: 20px;
+  }
+
   &:focus {
     outline: 0;
     border-color: #1ab188;
   }
+}
+
+.page-modal__remember {
+  position: relative;
+}
+
+.page-modal__remember label {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#remember-me {
+  display: inline;
+  height: 17px;
+  width: 17px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.page-modal__remember {
+  margin-top: 0px;
+  width: 100%;
+  text-align: right;
+  color: rgba($white, 0.5);
 }
 
 .page-modal textarea {
@@ -837,24 +877,12 @@ label.active {
 .page-modal__field-wrap {
   position: relative;
   margin-bottom: 40px;
+  min-height: 39px;
 }
 
-// .top-row {
-//   &:after {
-//     content: "";
-//     display: table;
-//     clear: both;
-//   }
-
-//   > div {
-//     float: left;
-//     width: 48%;
-//     margin-right: 4%;
-//     &:last-child {
-//       margin: 0px;
-//     }
-//   }
-// }
+#page-modal__login form .page-modal__field-wrap:nth-child(2) {
+  margin-bottom: 15px;
+}
 
 .page-modal__button {
   border: 0;
@@ -864,11 +892,9 @@ label.active {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  // letter-spacing: 0.1em;
   background: #1ab188;
   color: $white;
   transition: all.5s ease;
-  // -webkit-appearance: none;
 
   &:hover,
   &:focus {
@@ -878,25 +904,6 @@ label.active {
 .page-modal__button--button-block {
   display: block;
   width: 100%;
-}
-
-.page-modal__remember {
-  position: relative;
-  display: inline;
-  margin-top: -30px;
-  // text-align: right;
-  font-size: 14px;
-  cursor: pointer;
-  color: rgba($white, 0.5);
-  height: 40px;
-  width: 40px;
-  background: red;
-  z-index: 10;
-}
-
-.page-modal__remember input {
-  width: 15px;
-  height: 15px;
 }
 
 .page-modal__close-modal {
