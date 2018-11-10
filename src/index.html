@@ -1,421 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/media.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <title>jsfe2018 final project</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="wrapper-1">
-        <header>
-            <a class="site-logo" href="#">myDreamJob</a>
-            <ul class="main-nav" id="main-nav">
-                <li id="menu-sub-onhover">
-                    <a href="#" class="main-nav__item main-nav__item--dropdown">About</a>
-                    <ul class="main-nav__item--sub">
-                        <li>
-                            <a href="#services" class="main-nav__subitem">What
-                                we do</a>
-                        </li>
-                        <li>
-                            <a href="#team" class="main-nav__subitem">Our
-                                team</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#contacts" class="main-nav__item">Contacts</a></li>
-                <li><a href="#" class="main-nav__item main-nav__item--login">Log in</a></li>
-                <li><a href="#" class="main-nav__item main-nav__item--register">Register</a></li>
+      <header>
+        <a class="site-logo" href="#">myDreamJob</a>
+        <ul class="main-nav" id="main-nav">
+          <li id="menu-sub-onhover">
+            <a href="#" class="main-nav__item main-nav__item--dropdown"
+              >About</a
+            >
+            <ul class="main-nav__item--sub">
+              <li>
+                <a href="#services" class="main-nav__subitem">What we do</a>
+              </li>
+              <li><a href="#team" class="main-nav__subitem">Our team</a></li>
             </ul>
-        </header>
-        <h1>Get the best<br>job ever</h1>
-        <p class="descr">And be happy by making your living with your hobby</p>
-        <button class="register">Register</button>
+          </li>
+          <li><a href="#contacts" class="main-nav__item">Contacts</a></li>
+          <li>
+            <a href="#" class="main-nav__item main-nav__item--login">Log in</a>
+          </li>
+          <li>
+            <a href="#" class="main-nav__item main-nav__item--register"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </header>
+      <h1>Get the best<br />job ever</h1>
+      <p class="descr">And be happy by making your living with your hobby</p>
+      <button class="register">Register</button>
     </div>
     <main>
-        <div class="wrapper-2">
-            <section class="logged-in visually-hidden" id="logged-in">
-                <div class="logged-in__inner-nav">
-                    <div class="logged-in__greeting">Доброго вечора,
-                        oleksandr.zadorozhnyi@googlemail.com</div>
-                    <select name="logged-in__language" id="logged-in__language"></select>
+      <div class="wrapper-2">
+        <section class="logged-in visually-hidden" id="logged-in">
+          <ul class="logged-in__inner-nav">
+            <li class="logged-in__units logged-in__units--greeting">
+              Доброго вечора,<br />oleksandr.zadorozhnyi@googlemail.com
+            </li>
+            <li class="logged-in__units logged-in__units--language">
+                    <a href="#" class="logged-in__language">Українською</a>
+              <!-- <select name="logged-in__language" id="logged-in__language">
+                <option>Ukr</option>
+                <option>Eng</option>
+              </select> -->
+            </li>
+            <li class="logged-in__units logged-in__units--log-out">
+              <a href="#" class="logged-in__log-out">Вийти</a>
+            </li>
+          </ul>
+          <div class="logged-in__main-content">
+            <div class="logged-in__personal-settings">
+              <form id="logged-in__personal-form">
+                <input
+                  id="logged-in__name"
+                  class="logged-in__input"
+                  type="text"
+                  placeholder="Your name"
+                />
+                <input
+                  id="logged-in__telephone"
+                  class="logged-in__input"
+                  type="text"
+                  placeholder="Telephone"
+                />
+                <input
+                  id="logged-in__location"
+                  class="logged-in__input"
+                  type="text"
+                  placeholder="City"
+                />
+                <input
+                  id="logged-in__salary"
+                  class="logged-in__input"
+                  type="text"
+                  placeholder="Your preferred salary"
+                />
+                <textarea
+                  id="logged-in__about"
+                  type="text"
+                  placeholder="Any other related info"
+                ></textarea>
+              </form>
+
+              <form action="post">
+                <div class="logged-in__form-block logged-in__form-block--name">
+                  <label for="logged-in__label logged-in__label--name"
+                    >Ваше ім'я</label
+                  >
+                  <input
+                    type="text"
+                    name="logged-in__name"
+                    id="logged-in__name"
+                  />
                 </div>
-                <div class="logged-in__name">
-                    <input type="text" name="logged-in__name" id="logged-in__name"> Ваше ім'я
+                <div
+                  class="logged-in__form-block logged-in__form-block--telephone"
+                >
+                  <label for="logged-in__label logged-in__label--telephone"
+                    >Ваш номер телефону</label
+                  >
+                  <input
+                    type="text"
+                    name="logged-in__telephone"
+                    id="logged-in__telephone"
+                  />
                 </div>
-                <!-- <div class="logged-in__update_pass">
-                    взяти логіку з модального вікна
-                    <input type="text" name="111" id="222"> пароль
-                    <input type="text" name="333" id="444"> пароль ще раз
-                </div> -->
-                <div class="logged-in__user"></div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Strength</th>
-                            <th>Controls</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Typescript</td>
-                            <td>7/10</td>
-                            <!-- https://codepen.io/facundocorradini/pen/WgzwXj?editors=1100 -->
-                            <!-- https://codepen.io/facundocorradini/pen/Ooxorm?page=1& -->
-                            <!-- range -->
-                            <!-- meter -->
-                            <td><button>Remove</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </section>
-            <section id="services" class="services-story">
-                <h2>What can we do for you?</h2>
-                <input type="radio" name="show-story" id="story-1" checked>
-                <input type="radio" name="show-story" id="story-2">
-                <input type="radio" name="show-story" id="story-3">
-                <input type="radio" name="show-story" id="story-4">
-                <input type="radio" name="show-story" id="story-5">
-                <div class="stories-container">
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-1" id="large-1-turnon">
-                        <label class="transparent-label" for="large-1-turnon"></label>
-                        <img class="stories__small" src="./img/1-team-small.jpeg" alt="story1"
-                            width="300" height="300">
-                        <!-- <img class="stories__small" src="https://image.ibb.co/ebG8vq/1-team-small.jpg"
-                            alt="story1" width="300" height="300"> -->
-                        <div class="stories-container__item-descr">We are the united team of world
-                            class professionals</div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/1-team-large.jpeg" alt="story" width="640" height="426">
-                            <input type="radio" name="show-large-1" id="large-1-turnoff">
-                            <label class="stories-container__close-modal" for="large-1-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-2" id="large-2-turnon">
-                        <label class="transparent-label" for="large-2-turnon"></label>
-                        <img class="stories__small" src="./img/2-masterpiece-small.jpeg" alt="story2"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">
-                            Who create the masterpiece in IT headhunting art
-                        </div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/2-masterpiece-large.jpeg" alt="story" width="640"
-                                height="426">
-                            <input type="radio" name="show-large-2" id="large-2-turnoff">
-                            <label class="stories-container__close-modal" for="large-2-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-3" id="large-3-turnon">
-                        <label class="transparent-label" for="large-3-turnon"></label>
-                        <img class="stories__small" src="./img/3-create-future-small.jpeg" alt="story3"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">Creating the future. Your
-                            future. Every day.
-                        </div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/3-create-future-large.jpeg" alt="story" width="640"
-                                height="426">
-                            <input type="radio" name="show-large-3" id="large-3-turnoff">
-                            <label class="stories-container__close-modal" for="large-3-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-4" id="large-4-turnon">
-                        <label class="transparent-label" for="large-4-turnon"></label>
-                        <img class="stories__small" src="./img/4-idea-small.jpeg" alt="story4"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">We provide the best ideas of
-                            getting you hired by the world's top employers
-                        </div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/4-idea-large.jpeg" alt="story" width="640" height="426">
-                            <input type="radio" name="show-large-4" id="large-4-turnoff">
-                            <label class="stories-container__close-modal" for="large-4-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-5" id="large-5-turnon">
-                        <label class="transparent-label" for="large-5-turnon"></label>
-                        <img class="stories__small" src="./img/5-startup-small.jpeg" alt="story5"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">Developing your own startup
-                        </div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/5-startup-large.jpeg" alt="story" width="640" height="426">
-                            <input type="radio" name="show-large-5" id="large-5-turnoff">
-                            <label class="stories-container__close-modal" for="large-5-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-6" id="large-6-turnon">
-                        <label class="transparent-label" for="large-6-turnon"></label>
-                        <img class="stories__small" src="./img/6-create-offer-small.jpeg" alt="story6"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">Therefore creating the best
-                            possible offer, right for you.</div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/6-create-offer-large.jpeg" alt="story" width="640"
-                                height="426">
-                            <input type="radio" name="show-large-6" id="large-6-turnoff">
-                            <label class="stories-container__close-modal" for="large-6-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-7" id="large-7-turnon">
-                        <label class="transparent-label" for="large-7-turnon"></label>
-                        <img class="stories__small" src="./img/7-work-life-small.jpeg" alt="story7"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">So you can enjoy your dream</div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/7-work-life-large.jpeg" alt="story" width="640" height="426">
-                            <input type="radio" name="show-large-7" id="large-7-turnoff">
-                            <label class="stories-container__close-modal" for="large-7-turnoff">⤬</label>
-                        </div>
-                    </div>
-                    <div class="stories-container__item">
-                        <input type="radio" name="show-large-8" id="large-8-turnon">
-                        <label class="transparent-label" for="large-8-turnon"></label>
-                        <img class="stories__small" src="./img/8-grow-small.jpeg" alt="story8"
-                            width="300" height="300">
-                        <div class="stories-container__item-descr">And grow as a professional</div>
-                        <div class="stories-container__modal-backdrop">
-                            <img src="./img/8-grow-large.jpeg" alt="story" width="640" height="426">
-                            <input type="radio" name="show-large-8" id="large-8-turnoff">
-                            <label class="stories-container__close-modal" for="large-8-turnoff">⤬</label>
-                        </div>
-                    </div>
+                <div class="logged-in__form-block logged-in__form-block--place">
+                  <label for="logged-in__label logged-in__label--place"
+                    >Де шукаєте роботу?</label
+                  >
+                  <input
+                    type="text"
+                    name="logged-in__place"
+                    id="logged-in__place"
+                  />
                 </div>
-            </section>
-            <section id="team" class="our-team">
-                <h2>Meet our team</h2>
-                <ul class="team-list">
-                    <li class="team-list__item">
-                        <div class="img-holder">
-                            <img src="./img/team-zuckerberg.jpg" alt="team-zuckerberg" width="120"
-                                height="120">
-                        </div>
-                        <h4 class="team-list__title">Mark:<br>IT & Social media director</h4>
-                        <p class="team-list__desc">A big fan of social networks and React JS
-                            framework. As a philanthropist, I devote time to charity.</p>
-                    </li>
-                    <li class="team-list__item">
-                        <div class="img-holder">
-                            <img src="./img/team-hetfield.jpg" alt="team-hetfield" width="120"
-                                height="120">
-                        </div>
-                        <h4 class="team-list__title">James:<br>Corporate culture director</h4>
-                        <p class="team-list__desc">I get my inspiration from astronomy and a
-                            heavy metal music. I'd rather regret doing something than not doing
-                            something.</p>
-                    </li>
-                    <li class="team-list__item">
-                        <div class="img-holder">
-                            <img src="./img/team-musk.jpg" alt="team-musk" width="120" height="120">
-                        </div>
-                        <h4 class="team-list__title">Elon:<br>Innovations director</h4>
-                        <p class="team-list__desc">I'm a happy person that creates future: new
-                            ways of headhunting, transport and even space exploration.</p>
-                    </li>
-                    <li class="team-list__item">
-                        <div class="img-holder">
-                            <img src="./img/team-obama.jpg" alt="team-obama" width="120" height="120">
-                        </div>
-                        <h4 class="team-list__title">Barack:<br>CEO</h4>
-                        <p class="team-list__desc">I am fond of general management, polytics.
-                            My favorite country is the US.</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="contacts" class="contacts-section">
-                <h2>Get in touch with us</h2>
-                <div class="contacts-main">
-                    <div class="contacts-section__feedback">
-                        <p class="contacts__hint">Write us a message ...</p>
-                        <form id="feedback">
-                            <input id="feedback__name" class="feedback__input" type="text"
-                                placeholder="NAME">
-                            <input id="feedback__email" class="feedback__input" type="text"
-                                placeholder="E-MAIL">
-                            <textarea id="feedback__message" type="text" placeholder="MESSAGE"></textarea>
-                            <input id="feedback__submit" class="feedback__input" type="submit"
-                                value="Send message">
-                        </form>
-                    </div>
-                    <div class="contacts-section__details">
-                        <p class="contacts__hint">... or contact us directly</p>
-                        <a href="skype:holovko.s?call" class="contacts__elem contacts__elem--skype">holovko.s</a>
-                        <a href="mailto:holovko.s@gmail.com" class="contacts__elem contacts__elem--email">holovko.s@gmail.com</a>
-                        <a href="tel:+380931196677" class="contacts__elem contacts__elem--tel">+380931196677</a>
-                        <address class="contacts__elem contacts__elem--address">
-                            10, Prorizna Str., Kyiv, Ukraine</address>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5081.201360400589!2d30.514668505507018!3d50.448538202910115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce574899e9ed%3A0x9a10cc9e6d8c79ef!2z0LLRg9C70LjRhtGPINCf0YDQvtGA0ZbQt9C90LAsIDEwLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1540125933402"
-                            width="400" height="300" frameborder="0" style="border:0"
-                            allowfullscreen></iframe>
-                    </div>
+                <div
+                  class="logged-in__form-block logged-in__form-block--salary"
+                >
+                  <label for="logged-in__label logged-in__label--salary"
+                    >Бажана зарплата, $</label
+                  >
+                  <input
+                    type="text"
+                    name="logged-in__salary"
+                    id="logged-in__salary"
+                  />
                 </div>
-                <button class="register">Register</button>
-            </section>
-            <!-- <section class="page-modal visually-hidden"> -->
-                <!-- https://codepen.io/ehermanson/pen/KwKWEv -->
-                <!-- <div class="page-modal__wrapper">
-                    <ul class="page-modal__tab-group">
-                        <li class="page-modal__tab page-modal__tab--login page-modal__tab--modal-tab-active"><a
-                                href="#">Log In</a></li>
-                        <li class="page-modal__tab page-modal__tab--register"><a href="#">Register</a></li>
-                    </ul>
-                    <div class="page-modal__tab-content">
-                        <div id="page-modal__login">
-                            <form action="/" method="post" class="page-modal__form-login">
-                                <div class="page-modal__field-wrap">
-                                    <label for="email-login">
-                                        Email Address<span class="page-modal__req">*</span>
-                                    </label>
-                                    <input class="page-modal__user-text-input" id="email-login" type="email"
-                                        required autocomplete="off" autofocus />
-                                </div>
-                                <div class="page-modal__field-wrap">
-                                    <label for="pass-login">
-                                        Password<span class="page-modal__req">*</span>
-                                    </label>
-                                    <input class="page-modal__user-text-input" id="pass-login" type="password"
-                                        required autocomplete="off" />
-                                </div>
-                                <p class="page-modal__remember">
-                                    <input type="checkbox" id="remember-me" />
-                                    <label for="remember-me">Keep me logged in</label>
-                                </p>
-                                <button type="submit" class="page-modal__button page-modal__button--log-in page-modal__button--button-block">Log
-                                    In</button>
-                            </form>
-                        </div>
-                        <div class="visually-hidden" id="page-modal__register">
-                            <form action="/" method="post" class="page-modal__form-register">
-                                <div class="page-modal__field-wrap">
-                                    <label for="email-register">
-                                        Email Address<span class="page-modal__req">*</span>
-                                    </label>
-                                    <input class="page-modal__user-text-input" id="email-register" type="email"
-                                        required autocomplete="off" autofocus />
-                                </div>
-                                <div class="page-modal__field-wrap">
-                                    <label for="pass1-register">
-                                        Create a password 8 symbols long<span class="page-modal__req">*</span>
-                                    </label>
-                                    <input class="page-modal__user-text-input" id="pass1-register" type="password"
-                                        required autocomplete="off" />
-                                </div>
-                                <div class="page-modal__field-wrap">
-                                    <label for="pass2-register">
-                                        Repeat the password<span class="page-modal__req">*</span>
-                                    </label>
-                                    <input class="page-modal__user-text-input" id="pass2-register" type="password"
-                                        required autocomplete="off" />
-                                </div>
-                                <button type="submit" class="page-modal__button page-modal__button--register-new page-modal__button--button-block">Go!</button>
-                            </form>
-                        </div> -->
-                    <!-- </div>tab-content -->
-                    <!-- <span class="page-modal__close-modal">⤬</span>
-                </div>
-            </section> -->
-            <!-- <a href="#main-nav" class="to-main-nav"></a> -->
-            <footer>
-                <div class="footer__disclaimer">All characters appearing in this work are
-                    fictitious. Any resemblance to real persons, living or dead, is purely
-                    coincidental.</div>
-                <div class="footer__copyright">Serhii Holovko<br>All rights reserved © 2018</div>
-            </footer>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-        <section class="page-modal visually-hidden">
-            <!-- https://codepen.io/ehermanson/pen/KwKWEv -->
-            <div class="page-modal__wrapper">
-                <ul class="page-modal__tab-group">
-                    <li class="page-modal__tab page-modal__tab--login page-modal__tab--modal-tab-active"><a
-                            href="#">Log In</a></li>
-                    <li class="page-modal__tab page-modal__tab--register"><a href="#">Register</a></li>
-                </ul>
-                <div class="page-modal__tab-content">
-                    <div id="page-modal__login">
-                        <form action="/" method="post" class="page-modal__form-login">
-                            <div class="page-modal__field-wrap">
-                                <label for="email-login">
-                                    Email Address<span class="page-modal__req">*</span>
-                                </label>
-                                <input class="page-modal__user-text-input" id="email-login" type="email"
-                                    required autocomplete="off" autofocus />
-                            </div>
-                            <div class="page-modal__field-wrap">
-                                <label for="pass-login">
-                                    Password<span class="page-modal__req">*</span>
-                                </label>
-                                <input class="page-modal__user-text-input" id="pass-login" type="password"
-                                    required autocomplete="off" />
-                            </div>
-                            <p class="page-modal__remember">
-                                <input type="checkbox" id="remember-me" />
-                                <label for="remember-me">Keep me logged in</label>
-                            </p>
-                            <button type="submit" class="page-modal__button page-modal__button--log-in page-modal__button--button-block">Log
-                                In</button>
-                        </form>
-                    </div>
-                    <div class="visually-hidden" id="page-modal__register">
-                        <form action="/" method="post" class="page-modal__form-register">
-                            <div class="page-modal__field-wrap">
-                                <label for="email-register">
-                                    Email Address<span class="page-modal__req">*</span>
-                                </label>
-                                <input class="page-modal__user-text-input" id="email-register" type="email"
-                                    required autocomplete="off" autofocus />
-                            </div>
-                            <div class="page-modal__field-wrap">
-                                <label for="pass1-register">
-                                    Create a password 8 symbols long<span class="page-modal__req">*</span>
-                                </label>
-                                <input class="page-modal__user-text-input" id="pass1-register" type="password"
-                                    required autocomplete="off" />
-                            </div>
-                            <div class="page-modal__field-wrap">
-                                <label for="pass2-register">
-                                    Repeat the password<span class="page-modal__req">*</span>
-                                </label>
-                                <input class="page-modal__user-text-input" id="pass2-register" type="password"
-                                    required autocomplete="off" />
-                            </div>
-                            <button type="submit" class="page-modal__button page-modal__button--register-new page-modal__button--button-block">Go!</button>
-                        </form>
-                    </div>
-                </div>
-                <span class="page-modal__close-modal">⤬</span>
+              </form>
             </div>
+            <div class="logged-in__core">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Skill</th>
+                    <th>Strength</th>
+                    <th>Controls</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Typescript</td>
+                    <td>7/10</td>
+                    <!--
+                      https://codepen.io/facundocorradini/pen/WgzwXj?editors=1100
+                    -->
+                    <!--
+                      https://codepen.io/facundocorradini/pen/Ooxorm?page=1&
+                    -->
+                    <!-- range -->
+                    <!-- meter -->
+                    <td><button>Remove</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
+        <section id="services" class="services-story">
+          <h2>What can we do for you?</h2>
+          <input type="radio" name="show-story" id="story-1" checked />
+          <input type="radio" name="show-story" id="story-2" />
+          <input type="radio" name="show-story" id="story-3" />
+          <input type="radio" name="show-story" id="story-4" />
+          <input type="radio" name="show-story" id="story-5" />
+          <div class="stories-container">
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-1" id="large-1-turnon" />
+              <label class="transparent-label" for="large-1-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/1-team-small.jpeg"
+                alt="story1"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                We are the united team of world class professionals
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/1-team-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-1" id="large-1-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-1-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-2" id="large-2-turnon" />
+              <label class="transparent-label" for="large-2-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/2-masterpiece-small.jpeg"
+                alt="story2"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                Who create the masterpiece in IT headhunting art
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/2-masterpiece-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-2" id="large-2-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-2-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-3" id="large-3-turnon" />
+              <label class="transparent-label" for="large-3-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/3-create-future-small.jpeg"
+                alt="story3"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                Creating the future. Your future. Every day.
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/3-create-future-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-3" id="large-3-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-3-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-4" id="large-4-turnon" />
+              <label class="transparent-label" for="large-4-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/4-idea-small.jpeg"
+                alt="story4"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                We provide the best ideas of getting you hired by the world's
+                top employers
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/4-idea-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-4" id="large-4-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-4-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-5" id="large-5-turnon" />
+              <label class="transparent-label" for="large-5-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/5-startup-small.jpeg"
+                alt="story5"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                Developing your own startup
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/5-startup-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-5" id="large-5-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-5-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-6" id="large-6-turnon" />
+              <label class="transparent-label" for="large-6-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/6-create-offer-small.jpeg"
+                alt="story6"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                Therefore creating the best possible offer, right for you.
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/6-create-offer-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-6" id="large-6-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-6-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-7" id="large-7-turnon" />
+              <label class="transparent-label" for="large-7-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/7-work-life-small.jpeg"
+                alt="story7"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                So you can enjoy your dream
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/7-work-life-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-7" id="large-7-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-7-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+            <div class="stories-container__item">
+              <input type="radio" name="show-large-8" id="large-8-turnon" />
+              <label class="transparent-label" for="large-8-turnon"></label>
+              <img
+                class="stories__small"
+                src="./img/8-grow-small.jpeg"
+                alt="story8"
+                width="300"
+                height="300"
+              />
+              <div class="stories-container__item-descr">
+                And grow as a professional
+              </div>
+              <div class="stories-container__modal-backdrop">
+                <img
+                  src="./img/8-grow-large.jpeg"
+                  alt="story"
+                  width="640"
+                  height="426"
+                />
+                <input type="radio" name="show-large-8" id="large-8-turnoff" />
+                <label
+                  class="stories-container__close-modal"
+                  for="large-8-turnoff"
+                  >⤬</label
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="team" class="our-team">
+          <h2>Meet our team</h2>
+          <ul class="team-list">
+            <li class="team-list__item">
+              <div class="img-holder">
+                <img
+                  src="./img/team-zuckerberg.jpg"
+                  alt="team-zuckerberg"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <h4 class="team-list__title">
+                Mark:<br />IT & Social media director
+              </h4>
+              <p class="team-list__desc">
+                A big fan of social networks and React JS framework. As a
+                philanthropist, I devote time to charity.
+              </p>
+            </li>
+            <li class="team-list__item">
+              <div class="img-holder">
+                <img
+                  src="./img/team-hetfield.jpg"
+                  alt="team-hetfield"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <h4 class="team-list__title">
+                James:<br />Corporate culture director
+              </h4>
+              <p class="team-list__desc">
+                I get my inspiration from astronomy and a heavy metal music. I'd
+                rather regret doing something than not doing something.
+              </p>
+            </li>
+            <li class="team-list__item">
+              <div class="img-holder">
+                <img
+                  src="./img/team-musk.jpg"
+                  alt="team-musk"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <h4 class="team-list__title">Elon:<br />Innovations director</h4>
+              <p class="team-list__desc">
+                I'm a happy person that creates future: new ways of headhunting,
+                transport and even space exploration.
+              </p>
+            </li>
+            <li class="team-list__item">
+              <div class="img-holder">
+                <img
+                  src="./img/team-obama.jpg"
+                  alt="team-obama"
+                  width="120"
+                  height="120"
+                />
+              </div>
+              <h4 class="team-list__title">Barack:<br />CEO</h4>
+              <p class="team-list__desc">
+                I am fond of general management, polytics. My favorite country
+                is the US.
+              </p>
+            </li>
+          </ul>
+        </section>
+        <section id="contacts" class="contacts-section">
+          <h2>Get in touch with us</h2>
+          <div class="contacts-main">
+            <div class="contacts-section__feedback">
+              <p class="contacts__hint">Write us a message ...</p>
+              <form id="feedback">
+                <input
+                  id="feedback__name"
+                  class="feedback__input"
+                  type="text"
+                  placeholder="NAME"
+                />
+                <input
+                  id="feedback__email"
+                  class="feedback__input"
+                  type="text"
+                  placeholder="E-MAIL"
+                />
+                <textarea
+                  id="feedback__message"
+                  type="text"
+                  placeholder="MESSAGE"
+                ></textarea>
+                <input
+                  id="feedback__submit"
+                  class="feedback__input"
+                  type="submit"
+                  value="Send message"
+                />
+              </form>
+            </div>
+            <div class="contacts-section__details">
+              <p class="contacts__hint">... or contact us directly</p>
+              <a
+                href="skype:holovko.s?call"
+                class="contacts__elem contacts__elem--skype"
+                >holovko.s</a
+              >
+              <a
+                href="mailto:holovko.s@gmail.com"
+                class="contacts__elem contacts__elem--email"
+                >holovko.s@gmail.com</a
+              >
+              <a
+                href="tel:+380931196677"
+                class="contacts__elem contacts__elem--tel"
+                >+380931196677</a
+              >
+              <address class="contacts__elem contacts__elem--address">
+                10, Prorizna Str., Kyiv, Ukraine
+              </address>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5081.201360400589!2d30.514668505507018!3d50.448538202910115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce574899e9ed%3A0x9a10cc9e6d8c79ef!2z0LLRg9C70LjRhtGPINCf0YDQvtGA0ZbQt9C90LAsIDEwLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1suk!2sua!4v1540125933402"
+                width="400"
+                height="300"
+                frameborder="0"
+                style="border:0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <button class="register">Register</button>
+        </section>
+        <footer>
+          <div class="footer__disclaimer">
+            All characters appearing in this work are fictitious. Any
+            resemblance to real persons, living or dead, is purely coincidental.
+          </div>
+          <div class="footer__copyright">
+            Serhii Holovko<br />All rights reserved © 2018
+          </div>
+        </footer>
+      </div>
+
+      <section class="page-modal visually-hidden">
+        <div class="page-modal__wrapper">
+          <ul class="page-modal__tab-group">
+            <li
+              class="page-modal__tab page-modal__tab--login page-modal__tab--modal-tab-active"
+            >
+              <a href="#">Log In</a>
+            </li>
+            <li class="page-modal__tab page-modal__tab--register">
+              <a href="#">Register</a>
+            </li>
+          </ul>
+          <div class="page-modal__tab-content">
+            <div id="page-modal__login">
+              <form action="/" method="post" class="page-modal__form-login">
+                <div class="page-modal__field-wrap">
+                  <label for="email-login">
+                    Email Address<span class="page-modal__req">*</span>
+                  </label>
+                  <input
+                    class="page-modal__user-text-input"
+                    id="email-login"
+                    type="email"
+                    required
+                    autocomplete="off"
+                    autofocus
+                  />
+                </div>
+                <div class="page-modal__field-wrap">
+                  <label for="pass-login">
+                    Password<span class="page-modal__req">*</span>
+                  </label>
+                  <input
+                    class="page-modal__user-text-input"
+                    id="pass-login"
+                    type="password"
+                    required
+                    autocomplete="off"
+                  />
+                </div>
+                <p class="page-modal__remember">
+                  <input type="checkbox" id="remember-me" />
+                  <label for="remember-me">Keep me logged in</label>
+                </p>
+                <button
+                  type="submit"
+                  class="page-modal__button page-modal__button--log-in page-modal__button--button-block"
+                >
+                  Log In
+                </button>
+              </form>
+            </div>
+            <div class="visually-hidden" id="page-modal__register">
+              <form action="/" method="post" class="page-modal__form-register">
+                <div class="page-modal__field-wrap">
+                  <label for="email-register">
+                    Email Address<span class="page-modal__req">*</span>
+                  </label>
+                  <input
+                    class="page-modal__user-text-input"
+                    id="email-register"
+                    type="email"
+                    required
+                    autocomplete="off"
+                    autofocus
+                  />
+                </div>
+                <div class="page-modal__field-wrap">
+                  <label for="pass1-register">
+                    Create a password 8 symbols long<span
+                      class="page-modal__req"
+                      >*</span
+                    >
+                  </label>
+                  <input
+                    class="page-modal__user-text-input"
+                    id="pass1-register"
+                    type="password"
+                    required
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="page-modal__field-wrap">
+                  <label for="pass2-register">
+                    Repeat the password<span class="page-modal__req">*</span>
+                  </label>
+                  <input
+                    class="page-modal__user-text-input"
+                    id="pass2-register"
+                    type="password"
+                    required
+                    autocomplete="off"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="page-modal__button page-modal__button--register-new page-modal__button--button-block"
+                >
+                  Go!
+                </button>
+              </form>
+            </div>
+          </div>
+          <span class="page-modal__close-modal">⤬</span>
+        </div>
+      </section>
     </main>
 
     <a href="#main-nav" class="to-main-nav"></a>
-</body>
-
+  </body>
 </html>

@@ -8,7 +8,9 @@ export default class User {
     this._admin = false;
     this.language = "en";
     this.skills = [];
-
+    this.name = null;
+    this.about = "";
+    
     this.init();
   }
 
