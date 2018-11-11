@@ -1,3 +1,5 @@
+"use strict";
+
 export default class User {
   constructor(login, pass) {
     this.login = login;
@@ -10,40 +12,15 @@ export default class User {
     this.skills = [];
     this.name = null;
     this.about = "";
-    
-    this.init();
+    this.updateDate = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
+    // this.init();
   }
 
-  init() {
-    Object.defineProperty(user, "_salary", {
-      configurable: false,
-      writable: false,
-      enumerable: false
-    });
-  }
-
-  getGreeting() {
-    const hours = new Date().getHours();
-    if (hours < 13) {
-      if (hours < 6)
-        return {
-          ukr: "Доброї ночі, ",
-          eng: "Good night, "
-        };
-      return {
-        ukr: "Доброго ранку, ",
-        eng: "Good morning, "
-      };
-    } else {
-      if (hours < 17)
-        return {
-          ukr: "Доброго дня, ",
-          eng: "Good afternoon, "
-        };
-      return {
-        ukr: "Доброго вечора, ",
-        eng: "Good evening, "
-      };
-    }
-  }
+  // init() {
+  //   Object.defineProperty(this, "_admin", {
+  //     configurable: false,
+  //     writable: false,
+  //     enumerable: false
+  //   });
+  // }
 }

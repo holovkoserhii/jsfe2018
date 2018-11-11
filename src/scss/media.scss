@@ -68,6 +68,10 @@
 @media (max-width: 941px) {
   // Для планшета та телефона
 
+  *[data-content="greeting"] {
+    text-align: left;
+  }
+
   .contacts-main {
     flex-direction: column;
     align-items: center;

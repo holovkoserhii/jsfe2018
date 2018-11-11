@@ -90,6 +90,14 @@ header {
   text-transform: uppercase;
 }
 
+.site-logo:focus {
+  outline: none;
+}
+
+*[data-content="greeting"] {
+  word-break: break-word;
+}
+
 .main-nav {
   margin: 0px;
   // width: 440px;
@@ -108,7 +116,9 @@ header {
     border: none;
     background: transparent;
     min-width: 100px;
-    height: 40px;
+    height: 60px;
+    max-width: 180px;
+    // word-wrap: break-word;
     padding: 0px 10px;
     margin: 0px;
     display: flex;
@@ -222,91 +232,94 @@ header {
   margin: 0 50px;
 }
 
-#feedback, #logged-in__personal-form {
-    width: 350px;
-    margin: 0px;
-  }
-  
-  .feedback__input, .logged-in__input {
-    font-size: 14px;
-    width: 300px;
-    height: 50px;
-    padding: 0px 15px 0px 15px;
-    background: transparent;
-    outline: none;
-    color: #726659;
-    border: solid 1px #b3aca7;
-    border-bottom: none;
-    transition: all 0.3s ease-in-out;
-  
-    &:hover {
-      background: #b3aca7;
-      color: #e2dedb;
-    }
-  }
-  
-  #feedback__message, #logged-in__about {
-    width: 300px;
-    height: 272px;
-    padding: 15px;
-    resize: none;
-    background: transparent;
-    outline: none;
-    color: #726659;
-    font-size: 14px;
-    border: solid 1px #b3aca7;
-    transition: all 0.3s ease-in-out;
-  
-    &:hover {
-      background: #b3aca7;
-      color: #e2dedb;
-    }
-  }
-  
-  #feedback__submit {
-    width: 300px;
-    padding: 0;
-    margin: -5px 0px 0px 0px;
-    font-size: 0.875em;
-    color: #b3aca7;
-    outline: none;
-    cursor: pointer;
-    border: solid 1px #b3aca7;
-    border-top: none;
-  
-    &:hover {
-      color: #e2dedb;
-    }
-  }
-  
-  .feedback__input::placeholder,
-  #feedback__message::placeholder,
-  .logged-in__input::placeholder,
-  #logged-in__about::placeholder {
-    color: #aca49c;
-    font-size: 14px;
-  }
-  
-  .feedback__input:focus::placeholder,
-  #feedback__message:focus::placeholder, 
-  .logged-in__input:focus::placeholder,
-  #logged-in__about:focus::placeholder {
-    color: #bbb5af;
-  }
-  
-  .feedback__input:hover::placeholder,
-  #feedback__message:hover::placeholder,
-  .logged-in__input::placeholder,
-  #logged-in__about:hover::placeholder {
+#feedback,
+#logged-in__personal-form {
+  width: 350px;
+  margin: 0px;
+}
+
+.feedback__input,
+.logged-in__input {
+  font-size: 14px;
+  width: 300px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  border: solid 1px #b3aca7;
+  border-bottom: none;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #b3aca7;
     color: #e2dedb;
   }
-  
-  .feedback__input:hover:focus::placeholder,
-  #feedback__message:hover:focus::placeholder, 
-  .logged-in__input:hover:focus::placeholder,
-  #logged-in__about:hover:focus::placeholder {
-    color: #cbc6c1;
+}
+
+#feedback__message,
+#logged-in__about {
+  width: 300px;
+  height: 272px;
+  padding: 15px;
+  resize: none;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  font-size: 14px;
+  border: solid 1px #b3aca7;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: #b3aca7;
+    color: #e2dedb;
   }
+}
+
+#feedback__submit {
+  width: 300px;
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  font-size: 0.875em;
+  color: #b3aca7;
+  outline: none;
+  cursor: pointer;
+  border: solid 1px #b3aca7;
+  border-top: none;
+
+  &:hover {
+    color: #e2dedb;
+  }
+}
+
+.feedback__input::placeholder,
+#feedback__message::placeholder,
+.logged-in__input::placeholder,
+#logged-in__about::placeholder {
+  color: #aca49c;
+  font-size: 14px;
+}
+
+.feedback__input:focus::placeholder,
+#feedback__message:focus::placeholder,
+.logged-in__input:focus::placeholder,
+#logged-in__about:focus::placeholder {
+  color: #bbb5af;
+}
+
+.feedback__input:hover::placeholder,
+#feedback__message:hover::placeholder,
+.logged-in__input::placeholder,
+#logged-in__about:hover::placeholder {
+  color: #e2dedb;
+}
+
+.feedback__input:hover:focus::placeholder,
+#feedback__message:hover:focus::placeholder,
+.logged-in__input:hover:focus::placeholder,
+#logged-in__about:hover:focus::placeholder {
+  color: #cbc6c1;
+}
 
 // .logged-in__personal-settings {
 //   width: 400px;

@@ -1,6 +1,7 @@
 import { refs } from "./refs";
 import * as api from "../api/api";
 import * as pageLoader from "./pageLoader";
+import User from "../personal/classUser";
 
 export function handleClicks(evt) {
   const target = evt.target;
@@ -175,7 +176,7 @@ function analyzeValid(input, label) {
   )
     return;
   const EMAIL_PATTERN = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$/;
-  const PASS_PATTERN = /^(?=.*\d)(?=.*[a-zA-Z]).{8}$/;
+  const PASS_PATTERN = /^\w{8}$/;
   switch (inputType) {
     case "email":
       if (EMAIL_PATTERN.test(input.value)) {
@@ -205,7 +206,7 @@ function analyzeValid(input, label) {
           label.classList.add("invalid");
           label.classList.remove("valid");
           label.textContent =
-            "The password must contain at least one letter and one number and be 8 symbols long";
+            "The password must contain at least one letter and one number (without special symbols) and be 8 symbols long";
           return false;
         }
       } else {
@@ -245,18 +246,9 @@ function labelsReset(label, input) {
 function handleCreateUser() {
   const login = refs.modal.emailRegister.value;
   const pass = refs.modal.pass1Register.value;
-  // Створити в окремому модулі конструктор!
-
-  const user = {
-    login: login,
-    pass: pass,
-    salary: null,
-    telephone: null,
-    location: null,
-    admin: false,
-    language: "en",
-    skills: []
-  };
+  const user = new User(login, pass);
+  console.log("right after creation");
+  console.log(user);
   api.createUser(user);
   hide(refs.modal.pageModal);
 }
@@ -273,11 +265,9 @@ export function handleUserActions(userArray, state) {
         handleCreateUser();
         clearRegister();
         hide(refs.modal.pageModal);
-        // location.href = refs.site.locationLoggedIn;
       }
     case "loggingIn":
       if (!userArray[0]) {
-        console.log("Wrong password");
         refs.modal.passLoginLabel.classList.add("invalid");
         refs.modal.passLoginLabel.textContent = "Wrong password";
         return;
@@ -289,10 +279,8 @@ export function handleUserActions(userArray, state) {
       }
       clearLogin();
       hide(refs.modal.pageModal);
-      // show(refs.loggedIn.loggedInSection);
       pageLoader.siteReady();
       location.href = refs.site.locationLoggedIn;
-    // alert("Login successful");
   }
 }
 

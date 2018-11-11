@@ -2,6 +2,7 @@
 
 export const refs = {
   site: {
+    siteLogo: document.querySelector(".site-logo"),
     siteBody: document.querySelector("body"),
     logInButtonNav: document.querySelector(".main-nav__item--login"),
     registerButtonNav: document.querySelector(".main-nav__item--register"),
@@ -47,6 +48,14 @@ export const refs = {
     users: "users/",
   },
   loggedIn: {
-    loggedInSection: document.querySelector(".logged-in")
+    loggedInSection: document.querySelector(".logged-in"),
+    // personalForm: document.querySelector("#logged-in__personal-form"),
+    // personalFormFields: Array.from(document.querySelectorAll(".logged-in__input")),
+    // personalFormName: document.querySelector("#logged-in__name"),
+    // personalFormTelephone: document.querySelector("#logged-in__telephone"),
+    // personalFormLocation: document.querySelector("#logged-in__location"),
+    // personalFormSalary: document.querySelector("#logged-in__salary"),
+    // personalFormAbout: document.querySelector("#logged-in__about"),
+    // coreTable: document.querySelector(".logged-in__core"),
   }
 };
