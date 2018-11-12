@@ -4,9 +4,9 @@ import './../scss/media.scss';
 
 import {refs} from './general/refs';
 import * as clickHandler from './general/clickHandler';
-// import "./general/img";
-// import "./personal/hbs";
-// import "./personal/classUser";
+import "./general/img";
+import "./personal/hbs";
+import "./personal/classUser";
 import * as loader from "./general/pageLoader";
 import * as hbs from "./personal/hbs";
 
