@@ -8,6 +8,8 @@ export const refs = {
     registerButtonNav: document.querySelector(".main-nav__item--register"),
     registerButtonMain: Array.from(document.querySelectorAll(".register")),
     nav: document.querySelector(".main-nav"),
+    searchForm: document.querySelector("form.search"),
+    searchBar: document.querySelector(".search__input"),
     locationLoggedIn: "http://localhost:9000/#logged-in",
     feedBackForm: document.querySelector("#feedback"),
     feedBackName: document.querySelector("#feedback__name"),

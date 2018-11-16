@@ -182,8 +182,7 @@ input.search__input {
 input.search__input:focus {
   width: 130px;
   background-color: #fff;
-  border-color: $main-theme;
-  border-width: 2px;
+  border: solid 1px #ccc;
   box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
 }
 
