@@ -5,24 +5,28 @@ import * as clickHandler from "../general/clickHandler";
 import * as hbs from "../personal/hbs";
 
 // Create a feedback
-export function createFeedback(obj) {
-  fetch(refs.backEnd.apiUrl + refs.backEnd.feedBack, {
-    method: "POST",
-    body: JSON.stringify(obj),
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    }
-  })
-    .then(response => {
-      if (!response.ok) throw new Error("Cannot create a feedback record");
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-    })
-    .catch(error => console.log(error));
-}
+// export function createFeedback(obj) {
+//   console.log(obj);
+//   obj.date = `${new Date().getDate()}/${new Date().getMonth() +
+//     1}/${new Date().getFullYear()}`;
+//     console.log(obj);
+//   fetch(refs.backEnd.apiUrl + refs.backEnd.feedBack, {
+//     method: "POST",
+//     body: JSON.stringify(obj),
+//     headers: {
+//       Accept: "application/json",
+//       "Content-Type": "application/json"
+//     }
+//   })
+//     .then(response => {
+//       if (!response.ok) throw new Error("Cannot create a feedback record");
+//       return response.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//     })
+//     .catch(error => console.log(error));
+// }
 
 // Create a user
 export function createUser(obj) {
@@ -85,21 +89,17 @@ export function getUserByQuery(queryObj, state) {
 // Get user by id
 export function getUserById(id) {
   let queryString = `?id=${id}`;
-  return (
-    fetch(refs.backEnd.apiUrl + refs.backEnd.users + queryString)
-      .then(response => {
-        if (response.ok) return response.json();
-        throw new Error(`Error when fetching data: ${response.statusText}`);
-      })
-      // .then(data => console.log(data))
-      // .then()
-      .catch(error => console.log("User not found! " + error))
-  );
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.users + queryString)
+    .then(response => {
+      if (response.ok) return response.json();
+      throw new Error(`Error when fetching data: ${response.statusText}`);
+    })
+    .catch(error => console.log("User not found! " + error));
 }
 
 // Delete user
-export function removeUser(id) {
-  fetch(refs.backEnd.apiUrl + refs.backEnd.users + id, { method: "DELETE" })
+export function removeUser({id}) {
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.users + id, { method: "DELETE" })
     .then(response => {
       if (!response.ok) throw new Error("Cannot delete user");
     })
@@ -109,6 +109,8 @@ export function removeUser(id) {
 
 // Send a feedback form
 export function sendFeedBack(obj) {
+  obj.date = `${new Date().getDate()}/${new Date().getMonth() +
+    1}/${new Date().getFullYear()}`;
   fetch(refs.backEnd.apiUrl + refs.backEnd.feedBack, {
     method: "POST",
     body: JSON.stringify(obj),
@@ -125,18 +127,40 @@ export function sendFeedBack(obj) {
     .catch(error => console.log(error));
 }
 
+//update user
 export function updateUser(id, objWithChanges) {
-  fetch(refs.backEnd.apiUrl + refs.backEnd.users + id, {
+  objWithChanges.updateDate = `${new Date().getDate()}/${new Date().getMonth() +
+    1}/${new Date().getFullYear()}`;
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.users + id, {
     method: "PATCH",
     body: JSON.stringify(objWithChanges),
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json"
     }
-  }).then(response => {
-    if (!response.ok) throw new Error("Cannot make changes");
-    return response.json();
   })
-  .then(data => console.log(data))
-  .catch(error => console.log(error));;
+    .then(response => {
+      if (!response.ok) throw new Error("Cannot make changes");
+      return response.json();
+    })
+    .catch(error => console.log(error));
+}
+
+// get suitable skills list
+export function getSkills(input) {
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.hardSkills)
+    .then(response => {
+      if (response.ok) return response.json();
+      throw new Error(`Error when fetching data: ${response.statusText}`);
+    })
+    .then(data => {
+      return data.filter(el => el.includes(input));
+    })
+    .then(data => {
+      if (data.length > 15) {
+        return data.slice(0, 15);
+      }
+      return data;
+    })
+    .catch(error => console.log("skills not found! " + error));
 }

@@ -48,6 +48,7 @@ export const refs = {
     apiUrl: "http://localhost:3000/",
     feedBack: "feedback/",
     users: "users/",
+    hardSkills: "hardSkills/"
   },
   loggedIn: {
     loggedInSection: document.querySelector(".logged-in"),

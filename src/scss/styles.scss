@@ -252,6 +252,50 @@ input.search__input::-webkit-input-placeholder {
   margin: 0 50px;
 }
 
+.logged-in__skill {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+.logged-in__skill-select td {
+  padding-top: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin: auto;
+}
+
+.core-skills caption {
+  font-size: 30px;
+}
+
+.core-skills progress {
+  cursor: col-resize;
+}
+
+.core-skills__search-results {
+  position: absolute;
+  text-align: left;
+  color: rgba($white, 0.7);
+  z-index: 10;
+  padding: 0px;
+  top: 42px;
+  width: 300px;
+}
+
+.core-skills__search-results ul{
+  margin: 0px;
+}
+
+.core-skills__search-results li{
+  text-align: left;
+}
+
+.core-skills__search-results li:hover{
+  background: rgb(179, 172, 167);
+  cursor: pointer;
+}
+
 #feedback,
 #logged-in__personal-form {
   width: 350px;

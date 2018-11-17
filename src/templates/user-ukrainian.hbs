@@ -1,1 +1,28 @@
-<h2>Hello from user Ukrainian</h2>
+<ul class="logged-in__inner-nav">
+  <li class="logged-in__units logged-in__units--greeting">
+    {{greeting}}<br />{{login}}
+  </li>
+  <li class="logged-in__units logged-in__units--language">
+    <a href="#" class="logged-in__language">In English</a>
+  </li>
+  <li class="logged-in__units logged-in__units--log-out">
+    <a href="#" class="logged-in__log-out">Вийти</a>
+  </li>
+</ul>
+<div class="logged-in__main-content">
+  <div class="logged-in__personal-settings">
+    <form id="logged-in__personal-form">
+      <input id="logged-in__name" class="logged-in__input" type="text" placeholder="Ваше ім'я"
+        value="{{name}}" />
+      <input id="logged-in__telephone" class="logged-in__input" type="text" placeholder="Телефон"
+        value="{{telephone}}" />
+      <input id="logged-in__location" class="logged-in__input" type="text" placeholder="Місто (англ)" value="{{location}}" />
+      <input id="logged-in__salary" class="logged-in__input" type="text" placeholder="Бажана заробітна плата, USD"
+        value="{{salary}}" />
+      <textarea id="logged-in__about" class="logged-in__input" type="text" placeholder="Інша важлива інформація">{{about}}</textarea>
+    </form>
+  </div>
+  <div class="logged-in__core">{{{coreTable}}}</div>
+</div>
+<button class="logged-in__delete-user">Видалити обліковий запис</button>
+<p class="logged-in__disclaimer">Зверніть увагу: Немає потреби зберігати зміни. Система автоматично збереже та оновить Ваш профайл</p>

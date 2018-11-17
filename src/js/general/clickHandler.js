@@ -247,8 +247,6 @@ function handleCreateUser() {
   const login = refs.modal.emailRegister.value;
   const pass = refs.modal.pass1Register.value;
   const user = new User(login, pass);
-  console.log("right after creation");
-  console.log(user);
   api.createUser(user);
   hide(refs.modal.pageModal);
 }
