@@ -1,1 +1,33 @@
-<h2>hello from admin-english.hbs</h2>
+<ul class="logged-in__inner-nav">
+    <li class="logged-in__units logged-in__units--greeting">
+        {{greeting}}<br />{{login}}
+    </li>
+    <li class="logged-in__units logged-in__units--language">
+        <a href="#" class="logged-in__language">Українською</a>
+    </li>
+    <li class="logged-in__units logged-in__units--log-out">
+        <a href="#" class="logged-in__log-out">Log out</a>
+    </li>
+</ul>
+<div class="logged-in__main-content">
+    <div class="logged-in__admin-query">
+        <p class="logged-in__admin-regular">Select the needed query type</p>
+        <input type="radio" name="admin-viewMethod" id="by-skill" value="skill"><label for="by-skill">By
+            skill</label>
+        <input type="radio" name="admin-viewMethod" id="by-user" value="user"><label for="by-user">By
+            user</label>
+        <input type="radio" name="admin-viewMethod" id="by-feedback" value="feedback"><label for="by-feedback">By
+            feedback</label><br>
+        {{{adminQuery}}}
+    </div>
+    <div class="logged-in__admin-result">
+        <div class="container">
+            <div class="responsive-table">
+                <div id="dynamic-table"></div>
+            </div>
+        </div>
+        {{{adminTable}}}
+    </div>
+    <button class="logged-in__admin-download-all">Download all search results</button>
+    {{!-- https://codepen.io/adielhercules/pen/NXXxJG?editors=0010 --}}
+</div>

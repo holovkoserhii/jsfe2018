@@ -127,6 +127,16 @@ export function sendFeedBack(obj) {
     .catch(error => console.log(error));
 }
 
+// Get all feedback
+export function getFeedbackResponses() {
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.feedBack)
+    .then(response => {
+      if (response.ok) return response.json();
+      throw new Error(`Error when fetching data: ${response.statusText}`);
+    })
+    .catch(error => console.log("Feedback not found! " + error));
+}
+
 //update user
 export function updateUser(id, objWithChanges) {
   objWithChanges.updateDate = `${new Date().getDate()}/${new Date().getMonth() +

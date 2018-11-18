@@ -462,6 +462,42 @@
       "about": "",
       "updateDate": "18/11/2018",
       "id": 57
+    },
+    {
+      "login": "qwq@qwq.qwq",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [],
+      "name": null,
+      "about": "",
+      "updateDate": "18/11/2018",
+      "id": 58
+    },
+    {
+      "login": "qwqwqwqw@qw.qw",
+      "pass": "qwqw12qw",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [],
+      "name": null,
+      "about": "",
+      "updateDate": "18/11/2018",
+      "id": 59
+    },
+    {
+      "login": "admin@admin.net",
+      "pass": "admin123",
+      "_admin": true,
+      "language": "en",
+      "name": null,
+      "id": 60
     }
   ],
   "feedBack": [
