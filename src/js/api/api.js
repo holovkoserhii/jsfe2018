@@ -57,14 +57,14 @@ export function createUser(obj) {
 }
 
 // Get all users
-export function getUsers(event) {
-  event.preventDefault();
-  fetch(refs.backEnd.apiUrl + refs.backEnd.users)
+export function getUsers() {
+  // if(event) event.preventDefault();
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.users)
     .then(response => {
       if (response.ok) return response.json();
       throw new Error(`Error when fetching data: ${response.statusText}`);
     })
-    .then(data => console.log(data))
+    // .then(data => console.log(data))
     .catch(error => console.log("User not found! " + error));
 }
 

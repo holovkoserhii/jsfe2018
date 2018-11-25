@@ -10,6 +10,8 @@ import "./personal/classUser";
 import * as loader from "./general/pageLoader";
 import * as search from "./general/search";
 import * as hbs from "./personal/hbs";
+import * as paging from "./personal/paginator";
+// import { pager, showOnPage, rewq } from "./personal/paginator";
 
 
 document.addEventListener("DOMContentLoaded", loader.siteReady);

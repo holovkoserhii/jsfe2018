@@ -1,17 +1,15 @@
 import { refs } from "./refs";
 import * as clickHandler from "../general/clickHandler";
 import * as hbs from "../personal/hbs";
-import * as api from "../api/api";
+// import * as api from "../api/api";
+
 
 export function siteReady() {
-  // console.log(id);
-  // console.log(typeof(id));
   refs.site.siteLogo.focus();
   try {
     const loggedInUserId =
       localStorage.getItem("id") || sessionStorage.getItem("id");
     if (loggedInUserId) {
-      // console.log(loggedInUserId);
       //hiding login/register buttons from site:
       refs.site.registerButtonMain.map(el => clickHandler.hide(el));
 

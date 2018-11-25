@@ -6,6 +6,7 @@ import { refs } from "../general/refs";
 import * as api from "../api/api";
 // import debounce from "../general/debounce";
 import * as pageLoader from "../general/pageLoader";
+import { pager, showOnPage, rewq } from "./paginator";
 
 // console.log(userTemplateEnglish);
 
@@ -315,17 +316,31 @@ function getGreeting() {
 
 ///////// For admin
 
-function createTable() {
-  api
-    .getFeedbackResponses()
-    .then(data => {
-      const table = dataIntoTable(data);
-      document.querySelector("#dynamic-table").appendChild(table);
-      document
-        .querySelector("#dynamic-table")
-        .addEventListener("click", sortColumn);
-    })
-    .catch(error => console.log("Feedback not found! " + error));
+function createTable(arr = null) {
+  if (arr) {
+    sessionStorage.setItem("data", JSON.stringify(arr));
+    const table = dataIntoTable(arr);
+    document.querySelector("#dynamic-table").appendChild(table);
+    document
+      .querySelector("#dynamic-table")
+      .addEventListener("click", sortColumn);
+    pager(table);
+  } else {
+    api
+      .getUsers()
+      .then(data => {
+        sessionStorage.setItem("data", JSON.stringify(data));
+        const table = dataIntoTable(data);
+        document.querySelector("#dynamic-table").appendChild(table);
+        document
+          .querySelector("#dynamic-table")
+          .addEventListener("click", sortColumn);
+        // console.log(table);
+        return table;
+      })
+      .then(table => pager(table))
+      .catch(error => console.log("smth is wrong! " + error));
+  }
 }
 
 window.onload = function() {
@@ -349,7 +364,7 @@ function sortFn(a, b) {
 
 // Sort the list
 function sortList(list, direction) {
-  var sorted = list.sort(sortFn);
+  let sorted = list.sort(sortFn);
   if (direction === -1) {
     list.reverse();
   }
@@ -357,6 +372,7 @@ function sortList(list, direction) {
 }
 
 function dataIntoTable(data) {
+  console.log(data);
   const tableHeaders = data.reduce((accum, elem) => {
     // to collect the full array of possible keys
     Object.keys(elem).forEach(el => {
@@ -375,7 +391,7 @@ function dataIntoTable(data) {
   // filling the header row
   tableHeaders.forEach(el => {
     const cell = document.createElement("th");
-    cell.innerHTML = `<a href = "#">${el}</a>`;
+    cell.innerHTML = `<a href = '#'>${el}</a>`;
 
     // cell.innerHTML = el;
     headerRow.appendChild(cell);
@@ -384,11 +400,23 @@ function dataIntoTable(data) {
   //filling the regular table
   data.forEach(item => {
     const normalRow = document.createElement("tr");
+    normalRow.setAttribute("data-id", item.id);
     tableHeaders.forEach(headItem => {
       const cell = document.createElement("td");
-      cell.innerHTML = item[headItem] || "no data";
+      if (item[headItem] instanceof Array && item[headItem].length > 0) {
+        cell.innerHTML = item[headItem].reduce((accum, elem) => {
+          return accum = `${elem["skill"]}: ${elem["level"]}<br>`
+        }, "");
+      } else {
+        cell.innerHTML = item[headItem] || "no data";
+      }
       normalRow.appendChild(cell);
     });
+    // plus download CSV control
+    const cellCsv = document.createElement("td");
+    cellCsv.innerHTML = '<button class="download-csv--row">Download csv</button>';
+    normalRow.appendChild(cellCsv);
+
     tbody.appendChild(normalRow);
   });
 
@@ -402,10 +430,16 @@ function sortColumn(evt) {
   evt.preventDefault();
   const el = evt.target;
   if (el.nodeName !== "A") return;
-  const table = document.querySelector("table");
+
+  const table = document.createElement("table");
+  table.innerHTML = sessionStorage.getItem("tableInitial");
+  // const table = document.querySelector("table");
   const tBody = table.tBodies[0];
   const th = el.parentNode;
-  const cellIndex = Array.from(table.tHead.rows[0].cells).indexOf(th);
+  const initialTH = Array.from(table.tHead.rows[0].cells).find(
+    item => item.querySelector("a").textContent === el.textContent
+  );
+  const cellIndex = Array.from(table.tHead.rows[0].cells).indexOf(initialTH);
   let list = [];
 
   Array.from(table.rows).forEach((row, index) => {
@@ -449,4 +483,13 @@ function sortColumn(evt) {
     fragment.appendChild(item.row);
   });
   tBody.appendChild(fragment);
+
+  // push new table to session storage and start paging from 1st page
+  const newHead = el.closest("thead");
+  const newTable = document.createElement("table");
+  newTable.innerHTML = newHead.outerHTML + tBody.outerHTML;
+  const tabDiv = document.querySelector("#dynamic-table");
+  tabDiv.innerHTML = newTable.outerHTML;
+  const tab = tabDiv.querySelector("table");
+  pager(tab);
 }
