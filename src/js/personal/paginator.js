@@ -81,6 +81,7 @@ export function propsConstructor(
   pageCount,
   evt
 ) {
+  if (evt.target.nodeName !== "BUTTON") return;
   const props = {
     table: table,
     rowsPerPage: rowsPerPage,

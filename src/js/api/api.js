@@ -137,6 +137,17 @@ export function getFeedbackResponses() {
     .catch(error => console.log("Feedback not found! " + error));
 }
 
+// Get feedback by id
+export function getFeedbackResponseById(id) {
+  let queryString = `?id=${id}`;
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.feedBack + queryString)
+    .then(response => {
+      if (response.ok) return response.json();
+      throw new Error(`Error when fetching data: ${response.statusText}`);
+    })
+    .catch(error => console.log("Feedback not found! " + error));
+}
+
 //update user
 export function updateUser(id, objWithChanges) {
   objWithChanges.updateDate = `${new Date().getDate()}/${new Date().getMonth() +

@@ -7,6 +7,7 @@ import * as api from "../api/api";
 // import debounce from "../general/debounce";
 import * as pageLoader from "../general/pageLoader";
 import { pager, showOnPage, rewq } from "./paginator";
+import * as downloader from "./downloader";
 
 // console.log(userTemplateEnglish);
 
@@ -328,6 +329,7 @@ function createTable(arr = null) {
   } else {
     api
       .getUsers()
+      // .getFeedbackResponses() // переключити в рядку 406
       .then(data => {
         sessionStorage.setItem("data", JSON.stringify(data));
         const table = dataIntoTable(data);
@@ -372,7 +374,6 @@ function sortList(list, direction) {
 }
 
 function dataIntoTable(data) {
-  console.log(data);
   const tableHeaders = data.reduce((accum, elem) => {
     // to collect the full array of possible keys
     Object.keys(elem).forEach(el => {
@@ -401,11 +402,14 @@ function dataIntoTable(data) {
   data.forEach(item => {
     const normalRow = document.createElement("tr");
     normalRow.setAttribute("data-id", item.id);
+    normalRow.setAttribute("data-type", "users");
+    // normalRow.setAttribute("data-type", "feedBack");
+
     tableHeaders.forEach(headItem => {
       const cell = document.createElement("td");
       if (item[headItem] instanceof Array && item[headItem].length > 0) {
         cell.innerHTML = item[headItem].reduce((accum, elem) => {
-          return accum = `${elem["skill"]}: ${elem["level"]}<br>`
+          return accum += `${elem["skill"]}: ${elem["level"]}<br>`
         }, "");
       } else {
         cell.innerHTML = item[headItem] || "no data";
@@ -423,6 +427,9 @@ function dataIntoTable(data) {
   thead.appendChild(headerRow);
   table.appendChild(thead);
   table.appendChild(tbody);
+
+  table.addEventListener("click", downloader.handleDownloadItem);
+
   return table;
 }
 
