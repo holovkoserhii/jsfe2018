@@ -11,19 +11,18 @@ export function composeStart(evt) {
   const skill = document.querySelector("#user-stack").value || null;
   const minSalary = document.querySelector("#user-salary").value || null;
   let location = null;
-  if (document.querySelector("input[name='user-location']:checked")) {
+  if (document.querySelector("input[name='user-location']:checked").value !== "null") {
     location = document.querySelector("input[name='user-location']:checked")
       .value;
   }
   const updatedSince = document.querySelector("#user-update").value || null;
   const date = document.querySelector("#feedback-date").value || null;
-  // console.log("skill: ", skill);
-  // console.log("minSalary: ", minSalary);
-  // console.log("location: ", location);
-  // console.log("updatedSince: ", updatedSince);
-  // console.log(typeof updatedSince);
+  console.log("skill: ", skill);
+  console.log("minSalary: ", minSalary);
+  console.log("location: ", location);
+  console.log("updatedSince: ", updatedSince);
   // console.log("date: ", date);
-  if (type === "user") {
+  if (type === "users") {
     filterObject = {
       skill: skill,
       minSalary: minSalary,
@@ -32,10 +31,16 @@ export function composeStart(evt) {
     };
     // filterStart(filterObject, type);
   }
-  if (type === "feedback") {
+  if (type === "feedBack") {
     filterObject = {
       date: date
     };
+  };
+  console.log(filterObject);
+  for (let prop in filterObject) {
+    if (filterObject[prop] === null) {
+      delete filterObject[prop];
+    }
   }
   console.log(type);
   console.log(filterObject);
@@ -74,7 +79,7 @@ function filtering(objectsArray, filters, type) {
 
   //deleting admins
   filteredArray = filteredArray.filter(el => !el._admin);
-
+console.log(filteredArray);
   if ("location" in filters) {
     filteredArray = filteredArray.filter(
       el => el.location === filters.location
@@ -101,23 +106,30 @@ function filtering(objectsArray, filters, type) {
 
   if ("date" in filters) {
     filteredArray = filteredArray.filter(el => {
+      console.log(el.date);
+      console.log(typeof(el.date));
       const objDate = stringToDate(el.date);
       const filterDate = stringToDate(filters.date);
+      console.log(objDate);
+      // console.log(filterDate);
       return objDate >= filterDate;
     });
   }
-
+  console.log(filteredArray);
   sessionStorage.setItem("fullData", JSON.stringify(filteredArray));
   // fieldsToShow(filteredArray, type);
   return filteredArray;
 }
 
 function stringToDate(str) {
-  if (str.search("-")) {
+  if (str.search("-") > -1) {
     const objArrayDate = str.split("-");
+    // console.log(objArrayDate);
     return new Date(objArrayDate[0], objArrayDate[1] - 1, objArrayDate[2]);
   }
+  console.log(str);
   const objArrayDate = str.split("/");
+  console.log(objArrayDate);
   return new Date(objArrayDate[2], objArrayDate[1] - 1, objArrayDate[0]);
 }
 

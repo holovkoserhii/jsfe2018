@@ -1,81 +1,78 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: './src/js/index.js',
+    main: "./src/js/index.js"
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'main.js',
-    publicPath: '',
+    path: path.resolve(__dirname, "build"),
+    filename: "main.js",
+    publicPath: ""
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: "babel-loader"
       },
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
-              name: '[name].[ext]',
-              outputPath: 'img',
-              limit: 10000,
-            },
+              name: "[name].[ext]",
+              outputPath: "img",
+              limit: 10000
+            }
           },
-          'img-loader',
-        ],
+          "img-loader"
+        ]
       },
-      // {
-      //   test: /\.(jpe?g|png|gif|svg)$/,
-      //   exclude: /node_modules/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {}
-      //     }
-      //   ]
-      // },
+      {
+        test: /\.(woff(2)?|ttf)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/"
+            }
+          }
+        ]
+      },
       {
         test: /\.hbs$/,
         exclude: /node_modules/,
-        use: 'handlebars-loader',
-      },
-    ],
+        use: "handlebars-loader"
+      }
+    ]
   },
   plugins: [
-    new CleanWebpackPlugin('build'),
+    new CleanWebpackPlugin("build"),
     new HtmlWebpackPlugin({
       inject: true,
       hash: true,
-      template: './src/index.html',
-    }),
+      template: "./src/index.html"
+    })
   ],
   devServer: {
-    publicPath: '/',
+    publicPath: "/",
     historyApiFallback: true,
     noInfo: false,
     quiet: false,
-    stats: 'errors-only',
-    clientLogLevel: 'warning',
+    stats: "errors-only",
+    clientLogLevel: "warning",
     compress: true,
-    port: 9000,
-  },
+    port: 9000
+  }
 };

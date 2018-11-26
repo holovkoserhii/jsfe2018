@@ -53,6 +53,7 @@ export function findUser() {
         // location: "Kyiv",
       }, "users");
       document.querySelector(".logged-in__admin-query").addEventListener("change", filtering.composeStart);
+      document.querySelector(".logged-in__admin-query").addEventListener("click", downloader.loadReport);
     })
     .catch(error => console.log("User not found! " + error));
 }
@@ -332,6 +333,10 @@ export function createTable(arr = null, type = "users") {
   if (arr) {
     sessionStorage.setItem("data", JSON.stringify(arr));
     const table = dataIntoTable(arr, type);
+    console.log(document.querySelector("#dynamic-table").childNodes);
+    console.log(document.querySelector("#dynamic-table").children);
+    console.log(document.querySelector("#dynamic-table").childElementCount);
+    document.querySelector("#dynamic-table").innerHTML = "";
     document.querySelector("#dynamic-table").appendChild(table);
     document
       .querySelector("#dynamic-table")

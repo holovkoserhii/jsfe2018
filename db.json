@@ -474,7 +474,7 @@
       "name": "Serhii4",
       "email": "q@q.q",
       "text": "nicht so gut!",
-      "date": "17/11/2018",
+      "date": "11/11/2018",
       "id": 11
     },
     {
@@ -483,6 +483,13 @@
       "text": "l;afherosfheia",
       "date": "17/11/2018",
       "id": 12
+    },
+    {
+      "name": "Just me",
+      "email": "me@me.me",
+      "text": "life's good!",
+      "date": "27/11/2018",
+      "id": 13
     }
   ],
   "hardSkills": [

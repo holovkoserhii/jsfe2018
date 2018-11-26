@@ -42,7 +42,7 @@
         </ul>
       </header>
       <form class="search">
-        <input class="search__input" type="search" placeholder="Search">
+        <input class="search__input" type="search" placeholder="Search" />
       </form>
       <h1>Get the best<br />job ever</h1>
       <p class="descr">And be happy by making your living with your hobby</p>
@@ -50,8 +50,7 @@
     </div>
     <main>
       <div class="wrapper-2">
-        <section class="logged-in visually-hidden" id="logged-in">
-        </section>
+        <section class="logged-in visually-hidden" id="logged-in"></section>
         <section id="services" class="services-story">
           <h2>What can we do for you?</h2>
           <input type="radio" name="show-story" id="story-1" checked />
@@ -75,10 +74,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/1-team-large.jpeg"
+                  srcset="
+                    ./img/1-team-large1x.jpg,
+                    ./img/1-team-large2x.jpeg 2x
+                  "
+                  src="./img/1-team-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-1" id="large-1-turnoff" />
                 <label
@@ -103,10 +104,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/2-masterpiece-large.jpeg"
+                  srcset="
+                    ./img/2-masterpiece-large1x.jpg,
+                    ./img/2-masterpiece-large2x.jpeg 2x
+                  "
+                  src="./img/2-masterpiece-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-2" id="large-2-turnoff" />
                 <label
@@ -131,10 +134,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/3-create-future-large.jpeg"
+                  srcset="
+                    ./img/3-create-future-large1x.jpg,
+                    ./img/3-create-future-large2x.jpeg 2x
+                  "
+                  src="./img/3-create-future-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-3" id="large-3-turnoff" />
                 <label
@@ -160,10 +165,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/4-idea-large.jpeg"
+                  srcset="
+                    ./img/4-idea-large1x.jpg,
+                    ./img/4-idea-large2x.jpeg 2x
+                  "
+                  src="./img/4-idea-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-4" id="large-4-turnoff" />
                 <label
@@ -188,10 +195,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/5-startup-large.jpeg"
+                  srcset="
+                    ./img/5-startup-large1x.jpg,
+                    ./img/5-startup-large2x.jpeg 2x
+                  "
+                  src="./img/5-startup-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-5" id="large-5-turnoff" />
                 <label
@@ -216,10 +225,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/6-create-offer-large.jpeg"
+                  srcset="
+                    ./img/6-create-offer-large1x.jpg,
+                    ./img/6-create-offer-large2x.jpeg 2x
+                  "
+                  src="./img/6-create-offer-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-6" id="large-6-turnoff" />
                 <label
@@ -244,10 +255,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/7-work-life-large.jpeg"
+                  srcset="
+                    ./img/7-work-life-large1x.jpg,
+                    ./img/7-work-life-large2x.jpeg 2x
+                  "
+                  src="./img/7-work-life-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-7" id="large-7-turnoff" />
                 <label
@@ -272,10 +285,12 @@
               </div>
               <div class="stories-container__modal-backdrop">
                 <img
-                  src="./img/8-grow-large.jpeg"
+                  srcset="
+                    ./img/8-grow-large1x.jpg,
+                    ./img/8-grow-large2x.jpeg 2x
+                  "
+                  src="./img/8-grow-large2x.jpeg"
                   alt="story"
-                  width="640"
-                  height="426"
                 />
                 <input type="radio" name="show-large-8" id="large-8-turnoff" />
                 <label
@@ -426,11 +441,26 @@
           </div>
           <div class="footer__copyright">
             Serhii Holovko<br />All rights reserved © 2018
-              <ul class="footer__social">
-                <li><a class="footer__social-item footer__social-item--facebook" href="https://www.facebook.com/holovko.s"></a></li>
-                <li><a class="footer__social-item footer__social-item--linkedin" href="https://www.linkedin.com/in/serhiiholovko/"></a></li>
-                <li><a class="footer__social-item footer__social-item--telegram" href="https://t.me/holovko29"></a></li>
-              </ul>
+            <ul class="footer__social">
+              <li>
+                <a
+                  class="footer__social-item footer__social-item--facebook"
+                  href="https://www.facebook.com/holovko.s"
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="footer__social-item footer__social-item--linkedin"
+                  href="https://www.linkedin.com/in/serhiiholovko/"
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="footer__social-item footer__social-item--telegram"
+                  href="https://t.me/holovko29"
+                ></a>
+              </li>
+            </ul>
           </div>
         </footer>
       </div>
