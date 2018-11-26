@@ -1,38 +1,6 @@
 {
   "users": [
     {
-      "login": "myuser@com.com",
-      "pass": "q1q1q1q1",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "id": 25
-    },
-    {
-      "login": "qa@qa.qa",
-      "pass": "1q1q1q1q",
-      "salary": 9000,
-      "telephone": null,
-      "location": null,
-      "admin": false,
-      "language": "en",
-      "skills": [],
-      "id": 26
-    },
-    {
-      "login": "fef@q1q1.q1",
-      "pass": "qw12qw12",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "admin": false,
-      "language": "en",
-      "skills": [],
-      "id": 27
-    },
-    {
       "login": "we@we.we",
       "pass": "weWE23@#",
       "salary": null,
@@ -502,30 +470,6 @@
     }
   ],
   "feedBack": [
-    {
-      "name": "Serhii Holovko",
-      "email": "holovko.s@gmail.com",
-      "text": "Everything is great!",
-      "id": 7
-    },
-    {
-      "name": "Serhii Holovko",
-      "email": "holovko.s@gmail.com",
-      "text": "Everything is great! Once more test!",
-      "id": 8
-    },
-    {
-      "name": "Serhii2",
-      "email": "my-mail@ukr.net",
-      "text": "blah-blah-...",
-      "id": 9
-    },
-    {
-      "name": "Serhii3",
-      "email": "e@e.e",
-      "text": "mefgwdiusjjdpsfhorifseojdmcksnvbod",
-      "id": 10
-    },
     {
       "name": "Serhii4",
       "email": "q@q.q",

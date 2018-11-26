@@ -386,6 +386,14 @@ input.search__input::-webkit-input-placeholder {
   color: #cbc6c1;
 }
 
+#by-user:checked ~ .logged-in__by-feedback {
+  display: none;
+}
+
+#by-feedback:checked ~ .logged-in__by-user {
+  display: none;
+}
+
 // SERVICES-STORY
 
 .services-story {

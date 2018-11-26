@@ -12,12 +12,26 @@
 <div class="logged-in__main-content">
     <div class="logged-in__admin-query">
         <p class="logged-in__admin-regular">Select the needed query type</p>
-        <input type="radio" name="admin-viewMethod" id="by-skill" value="skill"><label for="by-skill">By
-            skill</label>
-        <input type="radio" name="admin-viewMethod" id="by-user" value="user"><label for="by-user">By
-            user</label>
-        <input type="radio" name="admin-viewMethod" id="by-feedback" value="feedback"><label for="by-feedback">By
+        <input type="radio" name="admin-viewMethod" id="by-user" value="user" checked="checked"><label for="by-user">By
+            user</label> <br>
+        <input type="radio" name="admin-viewMethod" id="by-feedback" value="feedBack"><label for="by-feedback">By
             feedback</label><br>
+            <div class="logged-in__by-user">
+                Find users ... <br>
+                By location:
+                <input type="radio" name="user-location" id="location-kyiv" value="Kyiv"><label for="location-kyiv">Kyiv</label> <br>
+                <input type="radio" name="user-location" id="location-kharkiv" value="Kharkiv"><label for="location-kharkiv">Kharkiv</label> <br>
+                <input type="radio" name="user-location" id="location-dnipro" value="Dnipro"><label for="location-dnipro">Dnipro</label> <br>
+                <input type="radio" name="user-location" id="location-odesa" value="Odesa"><label for="location-odesa">Odesa</label> <br>
+                <input type="radio" name="user-location" id="location-lviv" value="Lviv"><label for="location-lviv">Lviv</label> <br>
+                By stack: <input type="text" name="user-stack" id="user-stack" placeholder="E.g. javascript"> <br>
+                By salary: <input type="number" name="user-salary" id="user-salary" placeholder="Specify a minimum salary, USD..."> <br>
+                By last profile update: <input type="date" name="user-update" id="user-update"> <br>
+            </div>
+            <div class="logged-in__by-feedback">
+                Find feedback ... <br>
+                <label for="feedback-date">By dates since</label><input type="date" name="feedback-date" id="feedback-date"> <br>
+            </div>
         {{{adminQuery}}}
     </div>
     <div class="logged-in__admin-result">
@@ -28,6 +42,6 @@
         </div>
         {{{adminTable}}}
     </div>
-    <button class="logged-in__admin-download-all">Download all search results</button>
+    {{!-- <button class="logged-in__admin-download-all">Download all search results</button> --}}
     {{!-- https://codepen.io/adielhercules/pen/NXXxJG?editors=0010 --}}
 </div>

@@ -8,6 +8,7 @@ import * as api from "../api/api";
 import * as pageLoader from "../general/pageLoader";
 import { pager, showOnPage, rewq } from "./paginator";
 import * as downloader from "./downloader";
+import * as filtering from "./filters";
 
 // console.log(userTemplateEnglish);
 
@@ -42,8 +43,16 @@ export function findUser() {
   const id = localStorage.getItem("id") || sessionStorage.getItem("id");
   return api
     .getUserById(id)
-    .then(data => {
-      personalOutlookRender(data[0]);
+    .then(data => personalOutlookRender(data[0]))
+    .then(isAdmin => {
+      if (isAdmin) filtering.filterStart({
+        //   skill: "css",
+          // minSalary: 2000,
+          // updatedSince: "10/11/2018"
+        // date: "13/11/2018", // for feedBack
+        // location: "Kyiv",
+      }, "users");
+      document.querySelector(".logged-in__admin-query").addEventListener("change", filtering.composeStart);
     })
     .catch(error => console.log("User not found! " + error));
 }
@@ -83,6 +92,8 @@ export function personalOutlookRender(obj) {
   } else {
     userEventsTuning(obj);
   }
+  console.log(obj._admin);
+  return obj._admin;
 }
 
 function adminEventsTuning(obj) {
@@ -317,37 +328,37 @@ function getGreeting() {
 
 ///////// For admin
 
-function createTable(arr = null) {
+export function createTable(arr = null, type = "users") {
   if (arr) {
     sessionStorage.setItem("data", JSON.stringify(arr));
-    const table = dataIntoTable(arr);
+    const table = dataIntoTable(arr, type);
     document.querySelector("#dynamic-table").appendChild(table);
     document
       .querySelector("#dynamic-table")
       .addEventListener("click", sortColumn);
     pager(table);
   } else {
-    api
-      .getUsers()
-      // .getFeedbackResponses() // переключити в рядку 406
-      .then(data => {
-        sessionStorage.setItem("data", JSON.stringify(data));
-        const table = dataIntoTable(data);
-        document.querySelector("#dynamic-table").appendChild(table);
-        document
-          .querySelector("#dynamic-table")
-          .addEventListener("click", sortColumn);
-        // console.log(table);
-        return table;
-      })
-      .then(table => pager(table))
-      .catch(error => console.log("smth is wrong! " + error));
+    // api
+    //   .getUsers()
+    //   // .getFeedbackResponses() // переключити в рядку 406
+    //   .then(data => {
+    //     sessionStorage.setItem("data", JSON.stringify(data));
+    //     const table = dataIntoTable(data);
+    //     document.querySelector("#dynamic-table").appendChild(table);
+    //     document
+    //       .querySelector("#dynamic-table")
+    //       .addEventListener("click", sortColumn);
+    //     // console.log(table);
+    //     return table;
+    //   })
+    //   .then(table => pager(table))
+    //   .catch(error => console.log("smth is wrong! " + error));
   }
 }
 
-window.onload = function() {
-  createTable();
-};
+// window.onload = function() {
+//   createTable();
+// };
 
 // Sort helper
 function sortFn(a, b) {
@@ -373,7 +384,7 @@ function sortList(list, direction) {
   return sorted;
 }
 
-function dataIntoTable(data) {
+function dataIntoTable(data, type) {
   const tableHeaders = data.reduce((accum, elem) => {
     // to collect the full array of possible keys
     Object.keys(elem).forEach(el => {
@@ -402,14 +413,14 @@ function dataIntoTable(data) {
   data.forEach(item => {
     const normalRow = document.createElement("tr");
     normalRow.setAttribute("data-id", item.id);
-    normalRow.setAttribute("data-type", "users");
-    // normalRow.setAttribute("data-type", "feedBack");
+    if (type === "users") normalRow.setAttribute("data-type", "users");
+    if (type === "feedBack") normalRow.setAttribute("data-type", "feedBack");
 
     tableHeaders.forEach(headItem => {
       const cell = document.createElement("td");
       if (item[headItem] instanceof Array && item[headItem].length > 0) {
         cell.innerHTML = item[headItem].reduce((accum, elem) => {
-          return accum += `${elem["skill"]}: ${elem["level"]}<br>`
+          return (accum += `${elem["skill"]}: ${elem["level"]}<br>`);
         }, "");
       } else {
         cell.innerHTML = item[headItem] || "no data";
@@ -418,7 +429,8 @@ function dataIntoTable(data) {
     });
     // plus download CSV control
     const cellCsv = document.createElement("td");
-    cellCsv.innerHTML = '<button class="download-csv--row">Download csv</button>';
+    cellCsv.innerHTML =
+      '<button class="download-csv--row">Download csv</button>';
     normalRow.appendChild(cellCsv);
 
     tbody.appendChild(normalRow);
