@@ -12,42 +12,53 @@
 <div class="logged-in__main-content">
     <div class="logged-in__admin-query">
         <p class="logged-in__admin-regular">Select the needed query type</p>
-        <input type="radio" name="admin-viewMethod" id="by-user" value="users" checked="checked"><label
-            for="by-user">By
-            user</label> <br>
-        <input type="radio" name="admin-viewMethod" id="by-feedback" value="feedBack"><label for="by-feedback">By
-            feedback</label><br>
-        <div class="logged-in__by-user">
-            Find users ... <br>
-            By location:
-            <input type="radio" name="user-location" id="location-any" value="null" checked="checked"><label
-                for="location-any">any</label> <br>
-            <input type="radio" name="user-location" id="location-kyiv" value="Kyiv"><label for="location-kyiv">Kyiv</label>
-            <br>
-            <input type="radio" name="user-location" id="location-kharkiv" value="Kharkiv"><label
-                for="location-kharkiv">Kharkiv</label> <br>
-            <input type="radio" name="user-location" id="location-dnipro" value="Dnipro"><label for="location-dnipro">Dnipro</label>
-            <br>
-            <input type="radio" name="user-location" id="location-odesa" value="Odesa"><label for="location-odesa">Odesa</label>
-            <br>
-            <input type="radio" name="user-location" id="location-lviv" value="Lviv"><label for="location-lviv">Lviv</label>
-            <br>
-            By stack: <input type="text" name="user-stack" id="user-stack" placeholder="E.g. javascript">
-            <br>
-            By salary: <input type="number" name="user-salary" id="user-salary" placeholder="Specify a minimum salary, USD...">
-            <br>
-            By last profile update: <input type="date" name="user-update" id="user-update"> <br>
-            <button class="logged-in__download logged-in__download--seen">Download results</button>
-            <button class="logged-in__download logged-in__download--full">Download full data</button>
-        </div>
-        <div class="logged-in__by-feedback">
-            Find feedback ... <br>
-            <label for="feedback-date">By dates since</label><input type="date" name="feedback-date"
-                id="feedback-date"> <br>
-            <button class="logged-in__download logged-in__download--seen">Download results</button>
-            <button class="logged-in__download logged-in__download--full">Download full data</button>
-        </div>
-        {{!-- {{{adminQuery}}} --}}
+            <input type="radio" name="admin-viewMethod" id="by-user" value="users" checked="checked"><label
+                for="by-user">By
+                user</label> <br>
+            <input type="radio" name="admin-viewMethod" id="by-feedback" value="feedBack"><label
+                for="by-feedback">By
+                feedback</label>
+        <br>
+        <fieldset class="logged-in__by-user--fieldset">
+            <legend>Find users ...</legend>
+            <div class="logged-in__by-user">
+                <div class="input-header">By location:</div>
+                <input type="radio" name="user-location" id="location-any" value="null" checked="checked"><label
+                    for="location-any">any</label> <br>
+                <input type="radio" name="user-location" id="location-kyiv" value="Kyiv"><label for="location-kyiv">Kyiv</label>
+                <br>
+                <input type="radio" name="user-location" id="location-kharkiv" value="Kharkiv"><label
+                    for="location-kharkiv">Kharkiv</label> <br>
+                <input type="radio" name="user-location" id="location-dnipro" value="Dnipro"><label
+                    for="location-dnipro">Dnipro</label>
+                <br>
+                <input type="radio" name="user-location" id="location-odesa" value="Odesa"><label
+                    for="location-odesa">Odesa</label>
+                <br>
+                <input type="radio" name="user-location" id="location-lviv" value="Lviv"><label for="location-lviv">Lviv</label>
+                <br>
+                <div class="input-header">By stack:</div>
+                <input type="text" name="user-stack" id="user-stack" placeholder="E.g. javascript">
+                <br>
+                <div class="input-header">By salary:</div>
+                <input type="number" name="user-salary" id="user-salary" placeholder="Specify a minimum salary, USD...">
+                <br>
+                <div class="input-header">By last profile update:</div>
+                <input type="date" name="user-update" id="user-update"> <br>
+                <button class="logged-in__download logged-in__download--seen">Download results</button>
+                <button class="logged-in__download logged-in__download--full">Download full data</button>
+            </div>
+        </fieldset>
+        <fieldset class="logged-in__by-feedback--fieldset">
+            <legend >Find feedback ... </legend>
+            <div class="logged-in__by-feedback">
+                <div class="input-header">By date:</div>
+                <input type="date" name="feedback-date"
+                    id="feedback-date"> <br>
+                <button class="logged-in__download logged-in__download--seen">Download results</button>
+                <button class="logged-in__download logged-in__download--full">Download full data</button>
+            </div>
+        </fieldset>
     </div>
     <div class="logged-in__admin-result">
         <div class="container">
@@ -57,6 +68,4 @@
         </div>
         {{{adminTable}}}
     </div>
-    {{!-- <button class="logged-in__admin-download-all">Download all search results</button> --}}
-    {{!-- https://codepen.io/adielhercules/pen/NXXxJG?editors=0010 --}}
 </div>

@@ -47,7 +47,19 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "fonts/"
             }
-          }
+          },
+        ]
+      },
+      {
+        test: /\.(ico)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "ico/"
+            }
+          },
         ]
       },
       {

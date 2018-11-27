@@ -22,6 +22,7 @@
     display: block;
     width: 100%;
     border-radius: unset;
+    background-color: unset;
   }
 
   .main-nav__item {
@@ -34,8 +35,33 @@
     margin-left: 50px;
   }
 
-  // .main-nav li {
-  //   border: unset;
+  .logged-in__inner-nav {
+    justify-content: space-between;
+    padding: 0px 3px;
+  }
+
+  .logged-in__main-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .logged-in__main-content > div {
+    margin: 0 auto;
+    width: 350px;
+    margin-bottom: 30px;
+  }
+
+  .logged-in__units {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  // .logged-in__personal-settings {
+  //   order: 2;
+  // }
+
+  // .logged-in__core {
+  //   order: 1;
   // }
 
   .to-main-nav {

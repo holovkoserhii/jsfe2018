@@ -463,10 +463,47 @@
       "login": "admin@admin.net",
       "pass": "admin123",
       "_admin": true,
-      "language": "en",
+      "language": "ua",
       "name": null,
       "id": 60,
-      "updateDate": "24/11/2018"
+      "updateDate": "28/11/2018"
+    },
+    {
+      "login": "my@my.com",
+      "pass": "qwqw1212",
+      "salary": "",
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "ua",
+      "skills": [
+        {
+          "skill": "javascript (js)",
+          "level": 4
+        },
+        {
+          "skill": "dart",
+          "level": 8
+        }
+      ],
+      "name": "",
+      "about": "",
+      "updateDate": "28/11/2018",
+      "id": 61
+    },
+    {
+      "login": "any@any.any",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [],
+      "name": null,
+      "about": "",
+      "updateDate": "28/11/2018",
+      "id": 62
     }
   ],
   "feedBack": [

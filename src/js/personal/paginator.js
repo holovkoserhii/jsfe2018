@@ -1,5 +1,5 @@
 export function pager(table) {
-  const rowsPerPage = 5;
+  const rowsPerPage = 10;
   const rowsCount = table.rows.length;
   const currentPage = 1;
   const pageCount = Math.ceil(rowsCount / rowsPerPage);

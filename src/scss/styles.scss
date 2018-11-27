@@ -236,35 +236,65 @@ input.search__input::-webkit-input-placeholder {
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 30px;
+  padding: 0px 20px;
+
+  & li {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px 10px;
+    font-size: 16px;
+
+    & a {
+      color: rgba($main-theme, 0.7);
+      font-weight: bold;
+
+      &:hover {
+        color: $main-theme;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .logged-in__units {
   // display: block;
-  margin: 0 40px;
+  margin: 0 10px;
   text-align: left;
+  padding: 0px 10px;
 }
 
 .logged-in__main-content {
   display: flex;
   justify-content: center;
   flex-direction: row-reverse;
+  align-items: flex-end;
+  margin-bottom: 20px;
 }
 
 .logged-in__main-content > div {
-  margin: 0 50px;
+  margin: 0 10px;
 }
 
 .logged-in__skill {
   padding: 0px;
   margin: 0px;
   border: none;
+
+  &::placeholder {
+    text-align: center;
+  }
 }
 
 .logged-in__skill-select td {
-  padding-top: 20px;
+  // padding-top: 20px;
+  padding: 10px 0px;
   height: 20px;
   line-height: 20px;
   margin: auto;
+}
+
+.logged-in__skill-select td:nth-child(2) {
+padding-bottom: 5px;
 }
 
 .core-skills caption {
@@ -273,6 +303,7 @@ input.search__input::-webkit-input-placeholder {
 
 .core-skills progress {
   cursor: col-resize;
+  height: 16px;
 }
 
 .core-skills__search-results {
@@ -281,26 +312,49 @@ input.search__input::-webkit-input-placeholder {
   color: rgba($white, 0.7);
   z-index: 10;
   padding: 0px;
-  top: 42px;
+  top: 30px;
   width: 300px;
 }
 
-.core-skills__search-results ul{
+.core-skills__search-results ul {
   margin: 0px;
 }
 
-.core-skills__search-results li{
+.core-skills__search-results li {
   text-align: left;
 }
 
-.core-skills__search-results li:hover{
+.core-skills__search-results li:hover {
   background: rgb(179, 172, 167);
   cursor: pointer;
 }
 
+.core-skills button {
+  background-color: $main-theme;
+  border: none;
+
+  &:hover {
+    background-color: rgba(red, 0.5);
+  }
+}
+
+.logged-in__delete-user {
+  background: rgba(red, 0.4);
+  color: $white;
+  border: none;
+
+  &:hover {
+    background: red;
+  }
+}
+
+// .logged-in__personal-settings {
+//   order: 2;
+// }
+
 #feedback,
 #logged-in__personal-form {
-  width: 350px;
+  width: 300px;
   margin: 0px;
 }
 
@@ -387,12 +441,126 @@ input.search__input::-webkit-input-placeholder {
   color: #cbc6c1;
 }
 
-#by-user:checked ~ .logged-in__by-feedback {
+.input-header {
+  padding-left: 30px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.logged-in__admin-query {
+  text-align-last: left;
+  width: 300px;
+  margin-bottom: 30px;
+  // min-width: 300px;
+  // flex-basis: 300px;
+
+  & input[name="admin-viewMethod"] + label {
+    font-size: 18px;
+  }
+
+  & fieldset {
+    margin-top: 10px;
+  }
+
+  & legend {
+    font-weight: bold;
+    color: $main-theme;
+  }
+
+  & label {
+    padding-left: 5px;
+  }
+
+  & input[type="text"],
+  & input[type="number"],
+  & input[type="date"] {
+    width: 100%;
+  }
+}
+
+.logged-in__admin-regular {
+  font-size: 20px;
+  font-weight: bold;
+  color: $main-theme;
+  text-align: center;
+  text-align-last: center;
+}
+
+#by-user:checked ~ fieldset.logged-in__by-feedback--fieldset {
   display: none;
 }
 
-#by-feedback:checked ~ .logged-in__by-user {
+#by-feedback:checked ~ fieldset.logged-in__by-user--fieldset {
   display: none;
+}
+
+.logged-in__download {
+  margin-top: 20px;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background: rgba($main-theme, 0.7);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background: $main-theme;
+  }
+}
+
+#dynamic-table table {
+  width: 350px;
+  font-size: 13px;
+  border-collapse: collapse;
+}
+
+#dynamic-table td {
+  border: 2px solid #a0b3b0;
+  padding: 5px;
+}
+
+#dynamic-table th a {
+  font-size: 16px;
+  color: $main-theme;
+}
+
+#dynamic-table th a:hover {
+  color: rgba(red, 0.5);
+}
+
+#dynamic-table table th:nth-child(4) {
+  width: 200px;
+}
+
+#adminTableButtons {
+  display: inline-block;
+}
+
+#adminTableButtons button {
+  color: black;
+  float: left;
+  border: none;
+  min-width: 25px;
+  height: 25px;
+}
+
+#adminTableButtons button.pages-active {
+  background-color: $main-theme;
+  color: white;
+  // border-radius: 5px;
+}
+
+#adminTableButtons button:hover:not(.pages-active) {
+  background-color: #ddd;
+  // border-radius: 5px;
+}
+
+.logged-in__core {
+  align-self: flex-start;
+  // order: 1;
 }
 
 // SERVICES-STORY

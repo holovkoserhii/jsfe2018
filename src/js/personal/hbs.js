@@ -154,16 +154,18 @@ function getCoreTableMarkup(obj) {
   const skillsArr = obj.skills;
   const tableBegin = `<table class='core-skills'><caption>${
     obj.language === "ua" ? "Ваші вміння" : "Your skills"
-  }</caption><tbody>`;
+  }</caption><thead><tr><th>${
+    obj.language === "ua" ? "Стек" : "Stack"
+  }</th><th>${
+    obj.language === "ua" ? "Рівень (перетягуйте)" : "Level (drag)"
+  }</th></tr></thead><tbody>`;
   return (
     skillsArr.reduce((accum, elem) => {
       return (accum += `<tr><td>${
         elem.skill
       }</td><td><progress class='logged-in__strength' value='${
         elem.level
-      }' max='10'></progress></td><td><button>${
-        obj.language === "ua" ? "Видалити" : "Remove"
-      }</button></td></tr>`);
+      }' max='10'></progress></td><td><button>-</button></td></tr>`);
     }, tableBegin) +
     `<tr class='logged-in__skill-select'><td style='position:relative;'><input id='skill-input' class='logged-in__skill' type='text' placeholder='${
       obj.language === "ua"
@@ -435,7 +437,7 @@ function dataIntoTable(data, type) {
     // plus download CSV control
     const cellCsv = document.createElement("td");
     cellCsv.innerHTML =
-      '<button class="download-csv--row">Download csv</button>';
+      '<button class="download-csv--row">csv</button>';
     normalRow.appendChild(cellCsv);
 
     tbody.appendChild(normalRow);
