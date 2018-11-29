@@ -24,7 +24,7 @@ Used techniques - JS:
 - Debouncing
 - Webpack usage
 - Handlebars templating
-- Modules
+- Modules 
 
 Further improvement:
 - setup the "real" authentication with the modern security requirements (password hashing and encoding). Deployment of the "real" databases, secured and well managed;
