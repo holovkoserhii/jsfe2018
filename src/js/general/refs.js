@@ -52,13 +52,5 @@ export const refs = {
   },
   loggedIn: {
     loggedInSection: document.querySelector(".logged-in"),
-    // personalForm: document.querySelector("#logged-in__personal-form"),
-    // personalFormFields: Array.from(document.querySelectorAll(".logged-in__input")),
-    // personalFormName: document.querySelector("#logged-in__name"),
-    // personalFormTelephone: document.querySelector("#logged-in__telephone"),
-    // personalFormLocation: document.querySelector("#logged-in__location"),
-    // personalFormSalary: document.querySelector("#logged-in__salary"),
-    // personalFormAbout: document.querySelector("#logged-in__about"),
-    // coreTable: document.querySelector(".logged-in__core"),
   }
 };

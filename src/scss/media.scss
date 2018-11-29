@@ -13,7 +13,11 @@
   }
 
   header {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     height: auto;
     margin-bottom: 20px;
   }
@@ -26,7 +30,10 @@
   }
 
   .main-nav__item {
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
 
   .main-nav__item--sub {
@@ -36,13 +43,23 @@
   }
 
   .logged-in__inner-nav {
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 0px 3px;
   }
 
   .logged-in__main-content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
 
   .logged-in__main-content > div {
@@ -56,14 +73,6 @@
     padding: 0px;
   }
 
-  // .logged-in__personal-settings {
-  //   order: 2;
-  // }
-
-  // .logged-in__core {
-  //   order: 1;
-  // }
-
   .to-main-nav {
     bottom: 20px;
     right: 20px;
@@ -71,15 +80,24 @@
 
   //TEAM LIST
   .team-list {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-
-  // CONTACTS
 
   // FOOTER
   footer {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
 
     & div {
       width: 100%;
@@ -99,8 +117,15 @@
   }
 
   .contacts-main {
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .contacts__elem {
@@ -120,8 +145,14 @@
 @media (min-width: 748px) {
   /* Для планшета та ноутів */
   header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .wrapper-1 {
@@ -133,15 +164,22 @@
   }
 
   .team-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
 }
 
 @media (min-width: 748px) and (max-width: 941px) {
   /* Лише для планшета */
   .team-list__item {
-    flex-basis: 236px;
+    -webkit-flex-basis: 236px;
+        -ms-flex-preferred-size: 236px;
+            flex-basis: 236px;
   }
 
   .team-list {
@@ -152,7 +190,9 @@
 @media (min-width: 942px) {
   /* Лише для ноутів */
   .team-list__item {
-    flex-basis: 220px;
+    -webkit-flex-basis: 220px;
+        -ms-flex-preferred-size: 220px;
+            flex-basis: 220px;
   }
 
   .team-list {

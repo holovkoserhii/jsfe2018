@@ -18,7 +18,6 @@ export function handleClicks(evt) {
       hide(refs.modal.pageModal);
       break;
     case refs.site.registerButtonNav:
-      console.log(refs.site.registerButtonNav.dataset.content);
       if (refs.site.registerButtonNav.dataset.content === "logout") {
         localStorage.removeItem("id");
         sessionStorage.removeItem("id");

@@ -13,14 +13,5 @@ export default class User {
     this.name = null;
     this.about = "";
     this.updateDate = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
-    // this.init();
   }
-
-  // init() {
-  //   Object.defineProperty(this, "_admin", {
-  //     configurable: false,
-  //     writable: false,
-  //     enumerable: false
-  //   });
-  // }
 }

@@ -4,36 +4,28 @@ import * as adminTemplateEnglish from "../../templates/admin-english.hbs";
 import * as adminTemplateUkrainian from "../../templates/admin-ukrainian.hbs";
 import { refs } from "../general/refs";
 import * as api from "../api/api";
-// import debounce from "../general/debounce";
 import * as pageLoader from "../general/pageLoader";
 import { pager, showOnPage, rewq } from "./paginator";
 import * as downloader from "./downloader";
 import * as filtering from "./filters";
-
-// console.log(userTemplateEnglish);
 
 export function updateUserField(evt) {
   const id = localStorage.getItem("id") || sessionStorage.getItem("id");
   const target = evt.target;
   switch (target) {
     case refs.loggedIn.loggedInSection.querySelector("#logged-in__name"):
-      console.log("changing name");
       api.updateUser(id, { name: target.value });
       break;
     case refs.loggedIn.loggedInSection.querySelector("#logged-in__telephone"):
-      console.log("changing phone");
       api.updateUser(id, { telephone: target.value });
       break;
     case refs.loggedIn.loggedInSection.querySelector("#logged-in__location"):
-      console.log("changing location");
       api.updateUser(id, { location: target.value });
       break;
     case refs.loggedIn.loggedInSection.querySelector("#logged-in__salary"):
-      console.log("changing salary");
       api.updateUser(id, { salary: target.value });
       break;
     case refs.loggedIn.loggedInSection.querySelector("#logged-in__about"):
-      console.log("changing about");
       api.updateUser(id, { about: target.value });
       break;
   }
@@ -45,15 +37,7 @@ export function findUser() {
     .getUserById(id)
     .then(data => personalOutlookRender(data[0]))
     .then(isAdmin => {
-      if (isAdmin) filtering.filterStart({
-        //   skill: "css",
-          // minSalary: 2000,
-          // updatedSince: "10/11/2018"
-        // date: "13/11/2018", // for feedBack
-        // location: "Kyiv",
-      }, "users");
-      document.querySelector(".logged-in__admin-query").addEventListener("change", filtering.composeStart);
-      document.querySelector(".logged-in__admin-query").addEventListener("click", downloader.loadReport);
+      if (isAdmin) filtering.filterStart({}, "users");
     })
     .catch(error => console.log("User not found! " + error));
 }
@@ -93,8 +77,25 @@ export function personalOutlookRender(obj) {
   } else {
     userEventsTuning(obj);
   }
-  console.log(obj._admin);
+  // changing greeting in the main-nav
+  const newT = document.querySelector(".logged-in__units").textContent.trim();
+  const whereT = document.querySelector("*[data-content='greeting']");
+  whereT.innerHTML = newT.replace(", ", "<br>");
+
+  // logout in the logged-in section leads to logout
+  document
+    .querySelector(".logged-in__log-out")
+    .addEventListener("click", logoutInner);
+
   return obj._admin;
+}
+
+function logoutInner() {
+  localStorage.removeItem("id");
+  sessionStorage.removeItem("id");
+  delete refs.site.registerButtonNav.dataset.content;
+  refs.site.registerButtonNav.textContent = "Register";
+  pageLoader.siteReady();
 }
 
 function adminEventsTuning(obj) {
@@ -179,7 +180,7 @@ function changeLanguage(evt) {
   this.language === "en" ? (this.language = "ua") : (this.language = "en");
   api
     .updateUser(this.id, { language: this.language })
-    .then(() => personalOutlookRender(this))
+    .then(() => findUser())
     .catch(error => console.log(error));
 }
 
@@ -261,7 +262,6 @@ function updateSkills(evt) {
       level: strength
     });
   }
-  console.log(this.skills);
   api
     .updateUser(this.id, { skills: this.skills })
     .then(() => personalOutlookRender(this))
@@ -335,37 +335,20 @@ export function createTable(arr = null, type = "users") {
   if (arr) {
     sessionStorage.setItem("data", JSON.stringify(arr));
     const table = dataIntoTable(arr, type);
-    console.log(document.querySelector("#dynamic-table").childNodes);
-    console.log(document.querySelector("#dynamic-table").children);
-    console.log(document.querySelector("#dynamic-table").childElementCount);
     document.querySelector("#dynamic-table").innerHTML = "";
     document.querySelector("#dynamic-table").appendChild(table);
     document
       .querySelector("#dynamic-table")
       .addEventListener("click", sortColumn);
     pager(table);
-  } else {
-    // api
-    //   .getUsers()
-    //   // .getFeedbackResponses() // переключити в рядку 406
-    //   .then(data => {
-    //     sessionStorage.setItem("data", JSON.stringify(data));
-    //     const table = dataIntoTable(data);
-    //     document.querySelector("#dynamic-table").appendChild(table);
-    //     document
-    //       .querySelector("#dynamic-table")
-    //       .addEventListener("click", sortColumn);
-    //     // console.log(table);
-    //     return table;
-    //   })
-    //   .then(table => pager(table))
-    //   .catch(error => console.log("smth is wrong! " + error));
   }
+  document
+    .querySelector(".logged-in__admin-query")
+    .addEventListener("change", filtering.composeStart);
+  document
+    .querySelector(".logged-in__admin-query")
+    .addEventListener("click", downloader.loadReport);
 }
-
-// window.onload = function() {
-//   createTable();
-// };
 
 // Sort helper
 function sortFn(a, b) {
@@ -436,8 +419,7 @@ function dataIntoTable(data, type) {
     });
     // plus download CSV control
     const cellCsv = document.createElement("td");
-    cellCsv.innerHTML =
-      '<button class="download-csv--row">csv</button>';
+    cellCsv.innerHTML = '<button class="download-csv--row">csv</button>';
     normalRow.appendChild(cellCsv);
 
     tbody.appendChild(normalRow);
@@ -459,7 +441,6 @@ function sortColumn(evt) {
 
   const table = document.createElement("table");
   table.innerHTML = sessionStorage.getItem("tableInitial");
-  // const table = document.querySelector("table");
   const tBody = table.tBodies[0];
   const th = el.parentNode;
   const initialTH = Array.from(table.tHead.rows[0].cells).find(

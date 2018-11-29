@@ -2,7 +2,6 @@ import csv from "../api/csv";
 import * as api from "../api/api";
 
 export function handleDownloadItem(evt) {
-  console.log("downloader started");
   const target = evt.target;
   if (!target.classList.contains("download-csv--row")) return;
   const id = target.closest("tr").dataset.id;
@@ -22,13 +21,13 @@ export function handleDownloadItem(evt) {
 }
 
 export function loadReport(evt) {
-    if (evt.target.nodeName !== "BUTTON") return;
-    if (evt.target.classList.contains("logged-in__download--seen")) {
-        const data = JSON.parse(sessionStorage.getItem("filteredData"));
-        csv(data);
-    }
-    if (evt.target.classList.contains("logged-in__download--full")) {
-        const data = JSON.parse(sessionStorage.getItem("fullData"));
-        csv(data);
-    }
+  if (evt.target.nodeName !== "BUTTON") return;
+  if (evt.target.classList.contains("logged-in__download--seen")) {
+    const data = JSON.parse(sessionStorage.getItem("filteredData"));
+    csv(data);
+  }
+  if (evt.target.classList.contains("logged-in__download--full")) {
+    const data = JSON.parse(sessionStorage.getItem("fullData"));
+    csv(data);
+  }
 }

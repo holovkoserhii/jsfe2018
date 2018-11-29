@@ -4,30 +4,6 @@ import { refs } from "../general/refs";
 import * as clickHandler from "../general/clickHandler";
 import * as hbs from "../personal/hbs";
 
-// Create a feedback
-// export function createFeedback(obj) {
-//   console.log(obj);
-//   obj.date = `${new Date().getDate()}/${new Date().getMonth() +
-//     1}/${new Date().getFullYear()}`;
-//     console.log(obj);
-//   fetch(refs.backEnd.apiUrl + refs.backEnd.feedBack, {
-//     method: "POST",
-//     body: JSON.stringify(obj),
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json"
-//     }
-//   })
-//     .then(response => {
-//       if (!response.ok) throw new Error("Cannot create a feedback record");
-//       return response.json();
-//     })
-//     .then(data => {
-//       console.log(data);
-//     })
-//     .catch(error => console.log(error));
-// }
-
 // Create a user
 export function createUser(obj) {
   console.log("in a create user function");
@@ -58,13 +34,11 @@ export function createUser(obj) {
 
 // Get all users
 export function getUsers() {
-  // if(event) event.preventDefault();
   return fetch(refs.backEnd.apiUrl + refs.backEnd.users)
     .then(response => {
       if (response.ok) return response.json();
       throw new Error(`Error when fetching data: ${response.statusText}`);
     })
-    // .then(data => console.log(data))
     .catch(error => console.log("User not found! " + error));
 }
 
@@ -98,8 +72,10 @@ export function getUserById(id) {
 }
 
 // Delete user
-export function removeUser({id}) {
-  return fetch(refs.backEnd.apiUrl + refs.backEnd.users + id, { method: "DELETE" })
+export function removeUser({ id }) {
+  return fetch(refs.backEnd.apiUrl + refs.backEnd.users + id, {
+    method: "DELETE"
+  })
     .then(response => {
       if (!response.ok) throw new Error("Cannot delete user");
     })

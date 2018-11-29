@@ -19,7 +19,6 @@ export function pager(table) {
 export function showOnPage({ pageNumber, table, rowsPerPage, pageCount }) {
   const fullTable = document.createElement("table");
   fullTable.innerHTML = JSON.parse(sessionStorage.getItem("tableInitial"));
-  console.log(pageNumber);
   let rowsDisplayed = `<thead>${fullTable.rows[0].outerHTML.trim()}</thead>`;
   const rowsCount = fullTable.rows.length;
   const rowsBegin = rowsPerPage * (pageNumber - 1);
@@ -75,18 +74,16 @@ function pageButtons(table, pCount, pNumber, rows) {
   return buttonsHTML;
 }
 
-export function propsConstructor(
-  table,
-  rowsPerPage,
-  pageCount,
-  evt
-) {
+export function propsConstructor(table, rowsPerPage, pageCount, evt) {
   if (evt.target.nodeName !== "BUTTON") return;
   const props = {
     table: table,
     rowsPerPage: rowsPerPage,
     pageCount: pageCount,
-    pageNumber: parseInt(document.querySelector(".pages-active").textContent, 10)
+    pageNumber: parseInt(
+      document.querySelector(".pages-active").textContent,
+      10
+    )
   };
 
   if (evt.target.id === "pages-next") {
