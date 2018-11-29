@@ -19,12 +19,13 @@ General features:
 Used techniques - HTML/CSS:  
 - srcset
 - Downloaded fonts
-- Dynamic elements creation
+- BEM
 
 Used techniques - JS:
 - Debouncing
 - Webpack usage
 - Handlebars templating
+- Dynamic elements creation
 - Modules
 
 Further improvement:
