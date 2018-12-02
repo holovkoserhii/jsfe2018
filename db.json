@@ -1,383 +1,6 @@
 {
   "users": [
     {
-      "login": "we@we.we",
-      "pass": "weWE23@#",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 28
-    },
-    {
-      "login": "er@er.er",
-      "pass": "erER34#$",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 29
-    },
-    {
-      "login": "rt@rt.rt",
-      "pass": "rtRT45$%",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 30
-    },
-    {
-      "login": "ty@ty.ty",
-      "pass": "tyTY56%^",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 31
-    },
-    {
-      "login": "yu@yu.yu",
-      "pass": "yuYU67^&",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 32
-    },
-    {
-      "login": "ui@ui.ui",
-      "pass": "uiUI78&*",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 33
-    },
-    {
-      "login": "io@io.io",
-      "pass": "ioIO89*(",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 34
-    },
-    {
-      "login": "op@op.op",
-      "pass": "opOP90()",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 35
-    },
-    {
-      "login": "as@as.as",
-      "pass": "asAS12!@",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 36
-    },
-    {
-      "login": "sd@sd.sd",
-      "pass": "sdSD23@#",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 37
-    },
-    {
-      "login": "df@df.df",
-      "pass": "dfDF34#$",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 38
-    },
-    {
-      "login": "fg@fg.fg",
-      "pass": "fgFG45$%",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 39
-    },
-    {
-      "login": "qwer@rfd.fg",
-      "pass": "qwer1234",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 40
-    },
-    {
-      "login": "htgrf@fsd.cc",
-      "pass": "1212qwqw",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 41
-    },
-    {
-      "login": "dfdf@df.df",
-      "pass": "qwe123qw",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 42
-    },
-    {
-      "login": "az@az.az",
-      "pass": "azaz1212",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 43
-    },
-    {
-      "login": "sx@sx.sx",
-      "pass": "1212qwqw",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 44
-    },
-    {
-      "login": "dc@dc.dc",
-      "pass": "dcdc3434",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 45
-    },
-    {
-      "login": "ws@ws.ws",
-      "pass": "wsws2323",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 46
-    },
-    {
-      "login": "ed@ed.ed",
-      "pass": "eded3434",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 47
-    },
-    {
-      "login": "fr@fr.fr",
-      "pass": "frfr4545",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 48
-    },
-    {
-      "login": "qwe@qwe.qwe",
-      "pass": "qwQW12!@",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 49
-    },
-    {
-      "login": "wer@wer.wer",
-      "pass": "qwQW12!@",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 50
-    },
-    {
-      "login": "asd@asd.asd",
-      "pass": "qwQW1212",
-      "salary": 5000,
-      "telephone": "380931196677",
-      "location": "Kyiv",
-      "language": "en",
-      "skills": [
-        {
-          "skill": "javascript",
-          "level": 5
-        },
-        {
-          "skill": "css",
-          "level": 9
-        },
-        {
-          "skill": "java",
-          "level": 3
-        }
-      ],
-      "name": "Serhii",
-      "about": "blah-blah-blah",
-      "updateDate": "11/11/2018",
-      "id": 51
-    },
-    {
-      "login": "erdf@er.er",
-      "pass": "qwqw1212",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 52
-    },
-    {
-      "login": "qaz@qaz.qaz",
-      "pass": "qwqw1212",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 53
-    },
-    {
-      "login": "edc@edc.edc",
-      "pass": "qwqw1212",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 54
-    },
-    {
-      "login": "qqw@qw.qw",
-      "pass": "qwqw1212",
-      "salary": null,
-      "telephone": null,
-      "location": null,
-      "language": "en",
-      "skills": [],
-      "name": null,
-      "about": "",
-      "updateDate": "11/11/2018",
-      "id": 55
-    },
-    {
       "login": "qqww@qw.qw",
       "pass": "qwqw1212",
       "salary": "3500",
@@ -507,15 +130,20 @@
     {
       "login": "mail@mail.com",
       "pass": "qwqw1212",
-      "salary": null,
-      "telephone": null,
-      "location": null,
+      "salary": "999.99",
+      "telephone": "+380931196677",
+      "location": "Kyiv",
       "_admin": false,
-      "language": "en",
-      "skills": [],
-      "name": null,
+      "language": "ua",
+      "skills": [
+        {
+          "skill": "skill",
+          "level": 6
+        }
+      ],
+      "name": "Serhii Holovko",
       "about": "",
-      "updateDate": "28/11/2018",
+      "updateDate": "2/12/2018",
       "id": 63
     },
     {
@@ -544,6 +172,147 @@
       "about": "",
       "updateDate": "29/11/2018",
       "id": 64
+    },
+    {
+      "login": "my@my.my",
+      "pass": "qwqw1212",
+      "salary": "1000",
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [
+        {
+          "skill": "antunit",
+          "level": 6
+        },
+        {
+          "skill": "assembly",
+          "level": 3
+        },
+        {
+          "skill": "coldfusion",
+          "level": 8
+        },
+        {
+          "skill": "arexx",
+          "level": 5
+        }
+      ],
+      "name": "Ben",
+      "about": "my name is Vova",
+      "updateDate": "2/12/2018",
+      "id": 65
+    },
+    {
+      "login": "wsws@ws.ws",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [
+        {
+          "skill": "lift",
+          "level": 4
+        },
+        {
+          "skill": "aeryn",
+          "level": 6
+        }
+      ],
+      "name": null,
+      "about": "",
+      "updateDate": "2/12/2018",
+      "id": 66
+    },
+    {
+      "login": "serhii@gmail.com",
+      "pass": "qwqw1212",
+      "salary": "1000",
+      "telephone": "911",
+      "location": "Kyiv",
+      "_admin": false,
+      "language": "en",
+      "skills": [
+        {
+          "skill": "javascript (js)",
+          "level": 5
+        },
+        {
+          "skill": "python",
+          "level": 2
+        }
+      ],
+      "name": "Олег",
+      "about": "інша інформація",
+      "updateDate": "2/12/2018",
+      "id": 67
+    },
+    {
+      "login": "newcomer@i.i",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [
+        {
+          "skill": "c++builder",
+          "level": 3
+        },
+        {
+          "skill": "lynx",
+          "level": 6
+        }
+      ],
+      "name": null,
+      "about": "",
+      "updateDate": "2/12/2018",
+      "id": 68
+    },
+    {
+      "login": "one@one.one",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [],
+      "name": null,
+      "about": "",
+      "updateDate": "2/12/2018",
+      "id": 69
+    },
+    {
+      "login": "za@za.za",
+      "pass": "qwqw1212",
+      "salary": "999.98",
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [
+        {
+          "skill": "fort",
+          "level": 8
+        },
+        {
+          "skill": "cython",
+          "level": 3
+        },
+        {
+          "skill": "autohotkey",
+          "level": 7
+        }
+      ],
+      "name": null,
+      "about": "",
+      "updateDate": "2/12/2018",
+      "id": 70
     }
   ],
   "feedBack": [
@@ -581,6 +350,55 @@
       "text": "luckily, I made it :)",
       "date": "29/11/2018",
       "id": 15
+    },
+    {
+      "name": "",
+      "email": "",
+      "text": "1614",
+      "date": "2/12/2018",
+      "id": 16
+    },
+    {
+      "name": "123",
+      "email": "321",
+      "text": "1614",
+      "date": "2/12/2018",
+      "id": 17
+    },
+    {
+      "name": "123",
+      "email": "mail",
+      "text": "coma, coma, coma",
+      "date": "2/12/2018",
+      "id": 18
+    },
+    {
+      "name": "Сергій",
+      "email": "1@1.1",
+      "text": "Все чудово!",
+      "date": "2/12/2018",
+      "id": 19
+    },
+    {
+      "name": "Mike",
+      "email": "double@two.com",
+      "text": "sound check...",
+      "date": "2/12/2018",
+      "id": 20
+    },
+    {
+      "name": "",
+      "email": "",
+      "text": "",
+      "date": "2/12/2018",
+      "id": 21
+    },
+    {
+      "name": "Field one",
+      "email": "1@1.1",
+      "text": "fdsavfbgfnhjuthsdgf",
+      "date": "2/12/2018",
+      "id": 22
     }
   ],
   "hardSkills": [

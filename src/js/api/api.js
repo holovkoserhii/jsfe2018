@@ -6,8 +6,6 @@ import * as hbs from "../personal/hbs";
 
 // Create a user
 export function createUser(obj) {
-  console.log("in a create user function");
-  console.log(obj);
   fetch(refs.backEnd.apiUrl + refs.backEnd.users, {
     method: "POST",
     body: JSON.stringify(obj),

@@ -346,6 +346,7 @@ input.search__input::-webkit-input-placeholder {
   padding: 0px;
   margin: 0px;
   border: none;
+  height: 20px;
 
   &::-webkit-input-placeholder {
     text-align: center;
@@ -369,6 +370,7 @@ input.search__input::-webkit-input-placeholder {
   height: 20px;
   line-height: 20px;
   margin: auto;
+  vertical-align: top;
 }
 
 .logged-in__skill-select td:nth-child(2) {
@@ -381,7 +383,7 @@ input.search__input::-webkit-input-placeholder {
 
 .core-skills progress {
   cursor: col-resize;
-  height: 16px;
+  height: 20px;
 }
 
 .core-skills__search-results {
@@ -390,7 +392,7 @@ input.search__input::-webkit-input-placeholder {
   color: rgba($white, 0.7);
   z-index: 10;
   padding: 0px;
-  top: 30px;
+  top: 35px;
   width: 300px;
 }
 
@@ -408,12 +410,21 @@ input.search__input::-webkit-input-placeholder {
 }
 
 .core-skills button {
-  background-color: $main-theme;
+  display: inline-block;
+  background: rgba(red, 0.4);
+  color: $white;
   border: none;
+  padding: 0px;
+  height: 20px;
+  width: 20px;
 
   &:hover {
-    background-color: rgba(red, 0.5);
+    background: red;
   }
+}
+
+.available-skills td:nth-child(3) {
+  vertical-align: top;
 }
 
 .logged-in__delete-user {

@@ -281,11 +281,13 @@ export function handleUserActions(userArray, state) {
   }
 }
 
-export function feedBackFormSubmit() {
+export function feedBackFormSubmit(evt) {
+  evt.preventDefault();
   const feedBackUnit = {
     name: refs.site.feedBackName.value,
     email: refs.site.feedBackEmail.value,
     text: refs.site.feedBackText.value
   };
   api.sendFeedBack(feedBackUnit);
+  refs.site.feedBackForm.reset();
 }

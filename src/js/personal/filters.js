@@ -1,5 +1,11 @@
 import * as api from "../api/api";
 import * as hbs from "./hbs";
+import debounce from "../general/debounce";
+
+export function composeStartDebounced(evt) {
+  const debouncedFilter = debounce(300, composeStart);
+  debouncedFilter(evt);
+}
 
 export function composeStart(evt) {
   if (evt.target.nodeName !== "INPUT") return;
@@ -71,12 +77,14 @@ function filtering(objectsArray, filters, type) {
   }
 
   if ("minSalary" in filters) {
-    filteredArray = filteredArray.filter(el => el.salary >= filters.minSalary);
+    filteredArray = filteredArray.filter(el => {
+      return parseFloat(el.salary, 10) > parseFloat(filters.minSalary, 10);
+    });
   }
-
+  
   if ("skill" in filters) {
     filteredArray = filteredArray.filter(el =>
-      el.skills.some(sk => sk.skill === filters.skill)
+      el.skills.some(sk => sk.skill.indexOf(filters.skill) > -1)
     );
   }
 

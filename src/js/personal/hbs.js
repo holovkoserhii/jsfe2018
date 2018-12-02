@@ -162,11 +162,11 @@ function getCoreTableMarkup(obj) {
   }</th></tr></thead><tbody>`;
   return (
     skillsArr.reduce((accum, elem) => {
-      return (accum += `<tr><td>${
+      return (accum += `<tr class="available-skills"><td>${
         elem.skill
       }</td><td><progress class='logged-in__strength' value='${
         elem.level
-      }' max='10'></progress></td><td><button>-</button></td></tr>`);
+      }' max='10'></progress></td><td><button>X</button></td></tr>`);
     }, tableBegin) +
     `<tr class='logged-in__skill-select'><td style='position:relative;'><input id='skill-input' class='logged-in__skill' type='text' placeholder='${
       obj.language === "ua"
@@ -342,18 +342,21 @@ export function createTable(arr = null, type = "users") {
       .addEventListener("click", sortColumn);
     pager(table);
   }
+  // document
+  //   .querySelector(".logged-in__admin-query")
+  //   .addEventListener("change", filtering.composeStart);
   document
     .querySelector(".logged-in__admin-query")
-    .addEventListener("change", filtering.composeStart);
+    .addEventListener("keyup", filtering.composeStartDebounced);
   document
     .querySelector(".logged-in__admin-query")
     .addEventListener("click", downloader.loadReport);
 }
 
 // Sort helper
-function sortFn(a, b) {
-  let x = Number(a.value);
-  let y = Number(b.value);
+export function sortFn(a, b) {
+  let x = parseFloat(a.value, 10);
+  let y = parseFloat(b.value, 10);
   if (x && y) {
     if (x < y) return -1;
     if (x > y) return 1;
@@ -428,9 +431,8 @@ function dataIntoTable(data, type) {
   thead.appendChild(headerRow);
   table.appendChild(thead);
   table.appendChild(tbody);
-
+  
   table.addEventListener("click", downloader.handleDownloadItem);
-
   return table;
 }
 

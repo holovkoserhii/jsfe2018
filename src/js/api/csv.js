@@ -4,12 +4,12 @@ export default function downloadCsv(incomingArray) {
   console.log("csv started");
 
   //header Constructor
-  let csvHeader = Object.keys(incomingArray[0]).join(",") + "\r\n";
+  let csvHeader = Object.keys(incomingArray[0]).join("\t") + "\r\n";
   const hasSkills = Object.keys(incomingArray[0]).find(key => {
     return key === "skills";
   });
   if (hasSkills) {
-    const newCsvHeader = csvHeader.replace(hasSkills, "skill,level");
+    const newCsvHeader = csvHeader.replace(hasSkills, "skill\tlevel");
     csvHeader = newCsvHeader;
   }
 
@@ -28,25 +28,25 @@ export default function downloadCsv(incomingArray) {
               if (j === normalBody.length - 1) {
                 accumObject += normalBody[j] + "\r\n";
               } else {
-                accumObject += normalBody[j] + ",";
+                accumObject += normalBody[j] + "\t";
               }
             } else {
-              accumObject += `${normalBody[j][i].skill},${
+              accumObject += `${normalBody[j][i].skill}\t${
                 normalBody[j][i].level
-              },`;
+              }\t`;
             }
           }
         }
         return accumObject;
       } else {
         return (csvBody = incomingArray.reduce((accum, elem) => {
-          return (accum += Object.values(elem).join(",") + "\r\n");
+          return (accum += Object.values(elem).join("\t") + "\r\n");
         }, ""));
       }
     }, "");
   } else {
     csvBody = incomingArray.reduce((accum, elem) => {
-      return (accum += Object.values(elem).join(",") + "\r\n");
+      return (accum += Object.values(elem).join("\t") + "\r\n");
     }, "");
   }
 
