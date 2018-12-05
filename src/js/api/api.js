@@ -3,6 +3,7 @@
 import { refs } from "../general/refs";
 import * as clickHandler from "../general/clickHandler";
 import * as hbs from "../personal/hbs";
+import '@babel/polyfill';
 
 // Create a user
 export function createUser(obj) {

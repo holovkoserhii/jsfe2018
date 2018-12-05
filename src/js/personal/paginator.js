@@ -1,3 +1,5 @@
+import '@babel/polyfill';
+
 export function pager(table) {
   const rowsPerPage = 10;
   const rowsCount = table.rows.length;

@@ -1,3 +1,5 @@
+import '@babel/polyfill';
+
 export default function debounced(delay, fn) {
   let timerId;
   return function(...args) {

@@ -228,29 +228,6 @@
       "id": 66
     },
     {
-      "login": "serhii@gmail.com",
-      "pass": "qwqw1212",
-      "salary": "1000",
-      "telephone": "911",
-      "location": "Kyiv",
-      "_admin": false,
-      "language": "en",
-      "skills": [
-        {
-          "skill": "javascript (js)",
-          "level": 5
-        },
-        {
-          "skill": "python",
-          "level": 2
-        }
-      ],
-      "name": "Олег",
-      "about": "інша інформація",
-      "updateDate": "2/12/2018",
-      "id": 67
-    },
-    {
       "login": "newcomer@i.i",
       "pass": "qwqw1212",
       "salary": null,
@@ -313,6 +290,57 @@
       "about": "",
       "updateDate": "2/12/2018",
       "id": 70
+    },
+    {
+      "login": "qwqww@qw.qw",
+      "pass": "qwqw1212",
+      "salary": "",
+      "telephone": null,
+      "location": "Kyiv",
+      "_admin": false,
+      "language": "ua",
+      "skills": [
+        {
+          "skill": "actframework",
+          "level": 3
+        },
+        {
+          "skill": "gdscript",
+          "level": 6
+        }
+      ],
+      "name": null,
+      "about": "",
+      "updateDate": "5/12/2018",
+      "id": 71
+    },
+    {
+      "login": "qwqw@d.ww",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "ua",
+      "skills": [],
+      "name": null,
+      "about": "",
+      "updateDate": "5/12/2018",
+      "id": 72
+    },
+    {
+      "login": "my@my.me",
+      "pass": "qwqw1212",
+      "salary": null,
+      "telephone": null,
+      "location": null,
+      "_admin": false,
+      "language": "en",
+      "skills": [],
+      "name": null,
+      "about": "",
+      "updateDate": "5/12/2018",
+      "id": 73
     }
   ],
   "feedBack": [
@@ -399,6 +427,13 @@
       "text": "fdsavfbgfnhjuthsdgf",
       "date": "2/12/2018",
       "id": 22
+    },
+    {
+      "name": "11",
+      "email": "22",
+      "text": "33",
+      "date": "5/12/2018",
+      "id": 23
     }
   ],
   "hardSkills": [

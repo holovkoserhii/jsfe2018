@@ -1,6 +1,7 @@
 import * as api from "../api/api";
 import * as hbs from "./hbs";
 import debounce from "../general/debounce";
+import '@babel/polyfill';
 
 export function composeStartDebounced(evt) {
   const debouncedFilter = debounce(300, composeStart);

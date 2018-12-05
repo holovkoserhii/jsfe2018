@@ -1,4 +1,6 @@
 "use strict";
+import '@babel/polyfill';
+
 
 export default class User {
   constructor(login, pass) {

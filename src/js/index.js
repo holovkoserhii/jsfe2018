@@ -2,6 +2,7 @@ import './../scss/normalize.scss';
 import './../scss/styles.scss';
 import './../scss/media.scss';
 
+import '@babel/polyfill';
 import {refs} from './general/refs';
 import * as clickHandler from './general/clickHandler';
 import "./general/img";

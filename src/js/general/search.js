@@ -1,5 +1,6 @@
 import { refs } from "./refs";
 import debounce from "./debounce";
+import '@babel/polyfill';
 
 export const debouncedSearch = debounce(300, findOnPage);
 

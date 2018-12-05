@@ -1,10 +1,10 @@
 "use strict";
+import "@babel/polyfill";
 
 export default function downloadCsv(incomingArray) {
-  console.log("csv started");
 
   //header Constructor
-  let csvHeader = Object.keys(incomingArray[0]).join("\t") + "\r\n";
+  var csvHeader = Object.keys(incomingArray[0]).join("\t") + "\r\n";
   const hasSkills = Object.keys(incomingArray[0]).find(key => {
     return key === "skills";
   });
@@ -39,9 +39,12 @@ export default function downloadCsv(incomingArray) {
         }
         return accumObject;
       } else {
-        return (csvBody = incomingArray.reduce((accum, elem) => {
-          return (accum += Object.values(elem).join("\t") + "\r\n");
-        }, ""));
+        // creating one more element to aling csv vertically
+        let arr = Object.values(object);
+        const ind = Object.keys(incomingArray[0]).indexOf("skills");
+        arr.splice(ind + 1, 0, "");
+        accumObject += arr.join("\t") + "\r\n";
+        return accumObject;
       }
     }, "");
   } else {

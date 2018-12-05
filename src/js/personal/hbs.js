@@ -8,6 +8,8 @@ import * as pageLoader from "../general/pageLoader";
 import { pager, showOnPage, rewq } from "./paginator";
 import * as downloader from "./downloader";
 import * as filtering from "./filters";
+import '@babel/polyfill';
+
 
 export function updateUserField(evt) {
   const id = localStorage.getItem("id") || sessionStorage.getItem("id");
@@ -347,7 +349,7 @@ export function createTable(arr = null, type = "users") {
   //   .addEventListener("change", filtering.composeStart);
   document
     .querySelector(".logged-in__admin-query")
-    .addEventListener("keyup", filtering.composeStartDebounced);
+    .addEventListener("change", filtering.composeStartDebounced);
   document
     .querySelector(".logged-in__admin-query")
     .addEventListener("click", downloader.loadReport);

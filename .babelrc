@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "debug": true
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "add-module-exports",
+      {
+        "addDefaultProperty": true
+      }
+    ]
+  ]
+}

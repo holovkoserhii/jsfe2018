@@ -1,6 +1,7 @@
 import { refs } from "./refs";
 import * as clickHandler from "../general/clickHandler";
 import * as hbs from "../personal/hbs";
+import '@babel/polyfill';
 
 
 export function siteReady() {

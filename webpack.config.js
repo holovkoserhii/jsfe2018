@@ -1,11 +1,10 @@
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: {
-    main: "./src/js/index.js"
-  },
+  entry: ['@babel/polyfill', 'whatwg-fetch', "element-closest", "./src/js/index.js"],
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "main.js",
@@ -16,7 +15,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: "babel-loader"
+        use: {
+          loader: "babel-loader",
+          query: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.scss$/,
@@ -47,7 +51,7 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "fonts/"
             }
-          },
+          }
         ]
       },
       {
@@ -59,7 +63,7 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "ico/"
             }
-          },
+          }
         ]
       },
       {
@@ -75,7 +79,7 @@ module.exports = {
       inject: true,
       hash: true,
       template: "./src/index.html"
-    })
+    }),
   ],
   devServer: {
     publicPath: "/",

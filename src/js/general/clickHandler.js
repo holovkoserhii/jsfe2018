@@ -2,6 +2,7 @@ import { refs } from "./refs";
 import * as api from "../api/api";
 import * as pageLoader from "./pageLoader";
 import User from "../personal/classUser";
+import '@babel/polyfill';
 
 export function handleClicks(evt) {
   const target = evt.target;

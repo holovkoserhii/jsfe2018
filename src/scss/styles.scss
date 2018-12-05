@@ -55,11 +55,8 @@ section {
 
 .wrapper-1 {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-image: -webkit-linear-gradient(black, black),
-    url("../img/code-coding-computer-574077.jpg");
-  background-image: linear-gradient(black, black),
-    url("../img/code-coding-computer-574077.jpg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-image: url("../img/code-coding-computer-574077.jpg");
   background-blend-mode: saturation;
   -moz-background-size: cover;
   -webkit-background-size: cover;
@@ -373,8 +370,21 @@ input.search__input::-webkit-input-placeholder {
   vertical-align: top;
 }
 
+.logged-in__skill-select td:nth-child(1) {
+  max-width: 167px;
+
+  & input {
+    max-width: 167px;
+  }
+}
+
 .logged-in__skill-select td:nth-child(2) {
+  max-width: 140px;
   padding-bottom: 5px;
+
+  & progress {
+    max-width: 140px;
+  }
 }
 
 .core-skills caption {

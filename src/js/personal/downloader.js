@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import csv from "../api/csv";
 import * as api from "../api/api";
 

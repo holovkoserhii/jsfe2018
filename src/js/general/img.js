@@ -1,3 +1,5 @@
+import '@babel/polyfill';
+
 import "../../img/favicon.ico";
 import "../../img/services/1-team-small.jpeg";
 import "../../img/services/1-team-large1x.jpg";
